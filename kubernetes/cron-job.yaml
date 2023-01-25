@@ -10,6 +10,6 @@ spec:
         spec:
           containers:
           - name: policyreport
-            image: mritunjay394/policyreport
+            image: ghcr.io/nirmata/kube-bench-adapter:v0.2.0
           restartPolicy: Never
           serviceAccountName: clusterpolicyreport
