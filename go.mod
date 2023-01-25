@@ -3,7 +3,7 @@ module github.com/nirmata/kube-bench
 go 1.16
 
 require (
-	github.com/aquasecurity/kube-bench v0.6.0
+	github.com/aquasecurity/kube-bench v0.6.10
 	github.com/kubernetes-sigs/wg-policy-prototypes/policy-report/kube-bench-adapter v0.0.0-20220131211954-cefe281d424b
 	k8s.io/api v0.20.5
 	k8s.io/apimachinery v0.20.5
