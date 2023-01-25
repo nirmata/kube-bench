@@ -10,7 +10,7 @@ vet:
 	go vet ./...
 
 docker: build
-	docker build . -t ghcr.io/nirmata/kube-bench-adapter:v0.1.0
+	docker build . -t ghcr.io/nirmata/kube-bench-adapter:v0.2.0
 
 codegen:
 	./hack/update-codegen.sh
