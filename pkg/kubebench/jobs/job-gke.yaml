@@ -10,7 +10,15 @@ spec:
       containers:
         - name: kube-bench
           image: aquasec/kube-bench:v0.6.10
-          command: ["sh", "-c", "kube-bench", "run", "--targets", "node,policies,managedservices", "--benchmark", "gke-1.2.0"]
+          command:
+            [
+              "kube-bench",
+              "run",
+              "--targets",
+              "node,policies,managedservices",
+              "--benchmark",
+              "gke-1.2.0",
+            ]
           volumeMounts:
             - name: var-lib-kubelet
               mountPath: /var/lib/kubelet

@@ -7,16 +7,27 @@ spec:
   template:
     spec:
       hostPID: true
-      nodeSelector:
-        node-role.kubernetes.io/master: ""
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+              - matchExpressions:
+                  - key: node-role.kubernetes.io/control-plane
+                    operator: Exists
+              - matchExpressions:
+                  - key: node-role.kubernetes.io/master
+                    operator: Exists
       tolerations:
         - key: node-role.kubernetes.io/master
+          operator: Exists
+          effect: NoSchedule
+        - key: node-role.kubernetes.io/control-plane
           operator: Exists
           effect: NoSchedule
       containers:
         - name: kube-bench
           image: aquasec/kube-bench:v0.6.10
-          command: ["sh", "-c", "kube-bench", "run", "--targets", "master"]
+          command: ["kube-bench", "run", "--targets", "master"]
           volumeMounts:
             - name: var-lib-etcd
               mountPath: /var/lib/etcd
