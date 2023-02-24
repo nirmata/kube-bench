@@ -6,9 +6,8 @@ import (
 	"os"
 
 	"github.com/kubernetes-sigs/wg-policy-prototypes/policy-report/kube-bench-adapter/pkg/report"
-
-	"github.com/kubernetes-sigs/wg-policy-prototypes/policy-report/kube-bench-adapter/pkg/kubebench"
-	"github.com/kubernetes-sigs/wg-policy-prototypes/policy-report/kube-bench-adapter/pkg/params"
+	"github.com/nirmata/kube-bench/pkg/kubebench"
+	"github.com/nirmata/kube-bench/pkg/params"
 )
 
 func main() {
