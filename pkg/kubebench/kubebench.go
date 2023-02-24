@@ -10,7 +10,7 @@ import (
 	"time"
 
 	kubebench "github.com/aquasecurity/kube-bench/check"
-	"github.com/kubernetes-sigs/wg-policy-prototypes/policy-report/kube-bench-adapter/pkg/params"
+	"github.com/nirmata/kube-bench/pkg/params"
 	batchv1 "k8s.io/api/batch/v1"
 	apiv1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -48,6 +48,7 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 	if err != nil {
 		return nil, err
 	}
+
 	var jobName string
 	jobName, err = deployJob(context.Background(), clientset, params)
 	if err != nil {
@@ -84,7 +85,6 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 }
 
 func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *params.KubeBenchArgs) (string, error) {
-
 	jobYAML, err := embedYAMLs(params.KubebenchYAML)
 	if err != nil {
 		return "", err
@@ -100,7 +100,8 @@ func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *par
 	//job.Spec.Template.Spec.Containers[0].Args = []string{"--json"}
 	//job.Spec.Template.Spec.Containers[0].Args = []string{"--version", params.KubebenchVersion}
 	//job.Spec.Template.Spec.Containers[0].Args = []string{"--benchmark", params.KubebenchBenchmark}
-	job.Spec.Template.Spec.Containers[0].Args = []string{"run", "--json"}
+	//job.Spec.Template.Spec.Containers[0].Args = []string{"run", "--json"}
+
 	_, err = clientset.BatchV1().Jobs(params.Namespace).Create(ctx, job, metav1.CreateOptions{})
 
 	return jobName, err
