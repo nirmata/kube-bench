@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kubernetes-sigs/wg-policy-prototypes/policy-report/kube-bench-adapter/pkg/report"
 	"github.com/nirmata/kube-bench/pkg/kubebench"
 	"github.com/nirmata/kube-bench/pkg/params"
+	"github.com/nirmata/kube-bench/pkg/report"
 )
 
 func main() {
@@ -22,7 +22,7 @@ func main() {
 	}
 
 	// create policy report
-	r, err := report.New(cis, params.Params.Name, params.Params.Category)
+	r, err := report.New(cis, params.Params.Name, params.Params.KubebenchBenchmark, params.Params.Category)
 	if err != nil {
 		fmt.Printf("failed to create policy reports: %v \n", err)
 		os.Exit(-1)

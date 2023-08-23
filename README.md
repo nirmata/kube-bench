@@ -39,7 +39,7 @@ make build
 ##### Installing
 ```sh
 # Create policy report using
-./policyreport -name="kube-bench" -kube-bench-targets="master,node" -yaml="job.yaml" -category="CIS Benchmarks"
+./policyreport -name="kube-bench" -kube-bench-targets="master,node" -kube-bench-benchmark=cis-1.7 -category="CIS Benchmarks"
 
 # Check policyreports created through the custom resource
 kubectl get clusterpolicyreports
@@ -49,13 +49,12 @@ kubectl get clusterpolicyreports
 |:--------------------- |:-------:|-------------------------:|:--------------:|:------------------------------------------------:|
 | -category             | `string`| CIS Benchmarks           |   Any string name valid for category             | category of the policy report 
 | -namespace            | `string`| default                   |  any string name for required namespace |  specifies namespace where kube-bench job will run
-| -kube-bench-benchmark | `string`|   cis-1.6                    |    cis-1.5, cis-1.6, gke-1.0, eks-1.0, ack-1.0            | specify the benchmark for kube-bench job         |
+| -kube-bench-benchmark | `string`|   cis-1.7                    |    See [CIS Kubernetes Benchmark support](https://github.com/aquasecurity/kube-bench/blob/main/docs/platforms.md#cis-kubernetes-benchmark-support)            | specify the benchmark for kube-bench job         |
 | -kube-bench-targets   | `string`(accepts multiple values)| master,node,etcd,policies| 	master, controlplane, node, etcd, policies               | targets for benchmark of kube-bench job          |   
 | -kube-bench-version   | `string`|    1.21                    |   Kubernetes Version like 1.20,1.21,etc             | specify the Kubernetes version for kube-bench job|
 | -kubebenchImg         | `string`| aquasec/kube-bench:latest|aquasec/kube-bench:(kube-bench-version)                | kube-bench image used as part of this test       |
 | -kubeconfig           | `string`| $HOME/.kube/config       |  path to your KUBECONFIG              | absolute path to the kubeconfig file             | 
 | -name                 | `string`| kube-bench               |  Any name of string type              | name of policy report                            |
-| -yaml                 | `string`| job.yaml                 |  job.yaml, job-master.yaml, job-node.yaml, job-ack.yaml, job-aks.yaml, job-eks-asff.yaml, job-eks.yaml, job-gke.yaml, job-iks.yaml             | name of YAML for kube-bench job                  | 
 
 ## Project Maintenance
 
@@ -65,7 +64,5 @@ kubectl get clusterpolicyreports
 
 
 **Notes**:
-* Flags `-name`, `-yaml`, `-category` are user configurable and can be changed by changing the variable on the right hand side.
-* Flag `-yaml` input is a string that tells the type of `kube-bench` YAML and the strings are matched internally to the path of the job YAMLs located in `pkg/kubebench/jobs`. The user just need to enter the type of yaml. Example:
-`-yaml=job.yaml`, `-yaml=job-master.yaml`, `-yaml=job-node.yaml`,etc.
+* Flags `-name`, `-category` are user configurable and can be changed by changing the variable on the right hand side.
 * In order to generate policy report in the form of YAML, we can do `kubectl get clusterpolicyreports -o yaml > res.yaml` which will generate it as `res.yaml` in this case.

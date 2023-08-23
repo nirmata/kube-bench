@@ -42,8 +42,8 @@ func getClientSet(kubeconfigPath string) (*kubernetes.Clientset, error) {
 	return clientset, nil
 
 }
-func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 
+func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 	clientset, err := getClientSet(params.Kubeconfig)
 	if err != nil {
 		return nil, err
@@ -85,7 +85,7 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 }
 
 func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *params.KubeBenchArgs) (string, error) {
-	jobYAML, err := embedYAMLs(params.KubebenchYAML)
+	jobYAML, err := embedYAMLs(params.KubebenchBenchmark)
 	if err != nil {
 		return "", err
 	}
@@ -98,9 +98,9 @@ func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *par
 	jobName := job.GetName()
 	job.Spec.Template.Spec.Containers[0].Image = params.KubebenchImg
 	job.Spec.Template.Spec.Containers[0].Args = []string{"--json"}
-	//job.Spec.Template.Spec.Containers[0].Args = []string{"--version", params.KubebenchVersion}
-	//job.Spec.Template.Spec.Containers[0].Args = []string{"--benchmark", params.KubebenchBenchmark}
-	//job.Spec.Template.Spec.Containers[0].Args = []string{"run", "--json"}
+	if params.KubebenchBenchmark != "" {
+		job.Spec.Template.Spec.Containers[0].Args = append(job.Spec.Template.Spec.Containers[0].Args, "--benchmark="+params.KubebenchBenchmark)
+	}
 
 	_, err = clientset.BatchV1().Jobs(params.Namespace).Create(ctx, job, metav1.CreateOptions{})
 
