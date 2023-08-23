@@ -44,7 +44,6 @@ func getClientSet(kubeconfigPath string) (*kubernetes.Clientset, error) {
 }
 
 func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
-
 	clientset, err := getClientSet(params.Kubeconfig)
 	if err != nil {
 		return nil, err
@@ -86,7 +85,7 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 }
 
 func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *params.KubeBenchArgs) (string, error) {
-	jobYAML, err := embedYAMLs(params.KubebenchYAML)
+	jobYAML, err := embedYAMLs(params.KubebenchBenchmark)
 	if err != nil {
 		return "", err
 	}

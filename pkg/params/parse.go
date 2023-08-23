@@ -9,16 +9,18 @@ import (
 )
 
 type KubeBenchArgs struct {
-	Name               string
-	Category           string
-	Namespace          string
+	Namespace string
+
+	Name     string
+	Category string
+
 	Kubeconfig         string
-	KubebenchYAML      string
 	KubebenchImg       string
 	KubebenchTargets   string
 	KubebenchVersion   string
 	KubebenchBenchmark string
-	Timeout            time.Duration
+
+	Timeout time.Duration
 }
 
 var Params KubeBenchArgs
@@ -27,7 +29,6 @@ func ParseArguments() {
 	flag.StringVar(&Params.Name, "name", "kube-bench", "name of policy report")
 	flag.StringVar(&Params.Category, "category", "CIS Benchmarks", "category of the policy report")
 	flag.StringVar(&Params.Namespace, "namespace", "default", "namespace of kube-bench job")
-	flag.StringVar(&Params.KubebenchYAML, "yaml", "job.yaml", "YAML for kube-bench job")
 	flag.StringVar(&Params.KubebenchTargets, "kube-bench-targets", "master,node,etcd,policies", "targets for benchmark of kube-bench job")
 	flag.StringVar(&Params.KubebenchVersion, "kube-bench-version", "", "specify the Kubernetes version for kube-bench job")
 	flag.StringVar(&Params.KubebenchBenchmark, "kube-bench-benchmark", "", "specify the benchmark for kube-bench job")
