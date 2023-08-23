@@ -26,6 +26,7 @@ func TestEmbedYAMLs(t *testing.T) {
 		"cis-1.6-k3s":              "job.yaml",
 		"eks-stig-kubernetes-v1r6": "job-eks.yaml",
 		"tkgi-1.2.53":              "job.yaml",
+		"xyz":                      "job.yaml",
 	}
 
 	i := 0

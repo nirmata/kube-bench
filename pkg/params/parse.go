@@ -31,7 +31,7 @@ func ParseArguments() {
 	flag.StringVar(&Params.Namespace, "namespace", "default", "namespace of kube-bench job")
 	flag.StringVar(&Params.KubebenchTargets, "kube-bench-targets", "master,node,etcd,policies", "targets for benchmark of kube-bench job")
 	flag.StringVar(&Params.KubebenchVersion, "kube-bench-version", "", "specify the Kubernetes version for kube-bench job")
-	flag.StringVar(&Params.KubebenchBenchmark, "kube-bench-benchmark", "", "specify the benchmark for kube-bench job")
+	flag.StringVar(&Params.KubebenchBenchmark, "kube-bench-benchmark", "cis-1.7", "specify the benchmark for kube-bench job")
 
 	flag.StringVar(&Params.KubebenchImg, "kube-bench-image", "aquasec/kube-bench:v0.6.17", "kube-bench image used as part of this test")
 	flag.DurationVar(&Params.Timeout, "timeout", 10*time.Minute, "Test Timeout")
