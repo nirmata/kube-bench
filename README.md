@@ -64,5 +64,5 @@ kubectl get clusterpolicyreports
 
 
 **Notes**:
-* Flags `-name`, `-yaml`, `-category` are user configurable and can be changed by changing the variable on the right hand side.
+* Flags `-name`, `-category` are user configurable and can be changed by changing the variable on the right hand side.
 * In order to generate policy report in the form of YAML, we can do `kubectl get clusterpolicyreports -o yaml > res.yaml` which will generate it as `res.yaml` in this case.
