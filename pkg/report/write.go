@@ -45,11 +45,9 @@ func Write(r *clusterpolicyreport.ClusterPolicyReport, kubeconfigPath string) (*
 			return nil, err
 		}
 	} else {
-
 		// Update existing Policy Report
 		fmt.Println("updating policy report...")
 		retryErr := retry.RetryOnConflict(retry.DefaultRetry, func() error {
-
 			getObj, err := policyReport.Get(context.Background(), r.GetName(), metav1.GetOptions{})
 			if errors.IsNotFound(err) {
 				// This doesnt ever happen even if it is already deleted or not found

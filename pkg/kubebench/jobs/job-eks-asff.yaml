@@ -39,8 +39,6 @@ spec:
               "run",
               "--targets",
               "node",
-              "--benchmark",
-              "eks-1.1.0",
               "--asff",
             ]
           env:

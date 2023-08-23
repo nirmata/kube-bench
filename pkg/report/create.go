@@ -13,11 +13,11 @@ import (
 
 const PolicyReportSource string = "Kube Bench"
 
-func New(cisResults *kubebench.OverallControls, name string, category string) (*clusterpolicyreport.ClusterPolicyReport, error) {
-
+func New(cisResults *kubebench.OverallControls, name, benchmark, category string) (*clusterpolicyreport.ClusterPolicyReport, error) {
 	report := &clusterpolicyreport.ClusterPolicyReport{
 		ObjectMeta: metav1.ObjectMeta{
-			Name: name,
+			Name:        name,
+			Annotations: map[string]string{"benchmark": benchmark},
 		},
 		Summary: clusterpolicyreport.PolicyReportSummary{
 			Pass: cisResults.Totals.Pass,
@@ -29,7 +29,6 @@ func New(cisResults *kubebench.OverallControls, name string, category string) (*
 	for _, control := range cisResults.Controls {
 		for _, group := range control.Groups {
 			for _, check := range group.Checks {
-				_ = check
 				r := newResult(category, control, group, check)
 				report.Results = append(report.Results, r)
 			}
@@ -66,7 +65,6 @@ func newResult(category string, control *kubebench.Controls, group *kubebench.Gr
 }
 
 func convertState(s kubebench.State) clusterpolicyreport.PolicyResult {
-
 	str := strings.ToLower(string(s))
 
 	return clusterpolicyreport.PolicyResult(str)
