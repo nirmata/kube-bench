@@ -13,6 +13,8 @@ func getJobYamlName(benchmark string) (fname string) {
 	switch benchmark {
 	case "eks":
 		fname = "job-eks.yaml"
+	case "aks":
+		fname = "job-aks.yaml"
 	case "gke":
 		fname = "job-gke.yaml"
 	default:
