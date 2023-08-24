@@ -11,7 +11,7 @@ import (
 	clusterpolicyreport "sigs.k8s.io/wg-policy-prototypes/policy-report/pkg/api/wgpolicyk8s.io/v1alpha2"
 )
 
-const PolicyReportSource string = "Kube Bench Adapter"
+const PolicyReportSource string = "kube-bench-adapter"
 
 func New(cisResults *kubebench.OverallControls, name, benchmark, category string) (*clusterpolicyreport.ClusterPolicyReport, error) {
 	report := &clusterpolicyreport.ClusterPolicyReport{
