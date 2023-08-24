@@ -11,13 +11,13 @@ import (
 	clusterpolicyreport "sigs.k8s.io/wg-policy-prototypes/policy-report/pkg/api/wgpolicyk8s.io/v1alpha2"
 )
 
-const PolicyReportSource string = "Kube Bench"
+const PolicyReportSource string = "Kube Bench Adapter"
 
 func New(cisResults *kubebench.OverallControls, name, benchmark, category string) (*clusterpolicyreport.ClusterPolicyReport, error) {
 	report := &clusterpolicyreport.ClusterPolicyReport{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:        name,
-			Annotations: map[string]string{"benchmark": benchmark},
+			Annotations: map[string]string{"app.kubernetes.io/managed-by": "kube-bench-adapter", "benchmark": benchmark},
 		},
 		Summary: clusterpolicyreport.PolicyReportSummary{
 			Pass: cisResults.Totals.Pass,
