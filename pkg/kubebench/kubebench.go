@@ -165,7 +165,7 @@ func getPodLogs(ctx context.Context, clientset *kubernetes.Clientset, jobName st
 
 	lines := strings.Split(buf.String(), "\n")
 	for _, line := range lines {
-		if line[0] == '{' {
+		if len(line) > 0 && line[0] == '{' {
 			return line, nil
 		}
 	}
