@@ -4,25 +4,25 @@ metadata:
   annotations:
     app.kubernetes.io/managed-by: kube-bench-adapter
     benchmark: cis-1.24
-  creationTimestamp: "2023-08-23T11:43:42Z"
-  generation: 4
+  creationTimestamp: "2023-08-25T06:58:56Z"
+  generation: 1
   name: kube-bench
-  resourceVersion: "113332"
-  uid: 1dcef580-ec84-4bab-9b34-3cdf42c891fd
+  resourceVersion: "40757"
+  uid: d56af434-b6eb-4d22-9da5-ce38fe778bba
 results:
 - category: CIS Benchmarks
   message: Ensure that the API server pod specification file permissions are set to
     600 or more restrictive (Automated)
   policy: 1.1.1-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=600
     audit: /bin/sh -c 'if test -e /etc/kubernetes/manifests/kube-apiserver.yaml; then
       stat -c permissions=%a /etc/kubernetes/manifests/kube-apiserver.yaml; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 1.1.1
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the
@@ -36,23 +36,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990356933
-    seconds: 57
+    nanos: 33556409
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the API server pod specification file ownership is set to root:root
     (Automated)
   policy: 1.1.2-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: /bin/sh -c 'if test -e /etc/kubernetes/manifests/kube-apiserver.yaml; then
       stat -c %U:%G /etc/kubernetes/manifests/kube-apiserver.yaml; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.2
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -64,24 +64,24 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990361401
-    seconds: 57
+    nanos: 33562954
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the controller manager pod specification file permissions are
     set to 600 or more restrictive (Automated)
   policy: 1.1.3-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=600
     audit: /bin/sh -c 'if test -e /etc/kubernetes/manifests/kube-controller-manager.yaml;
       then stat -c permissions=%a /etc/kubernetes/manifests/kube-controller-manager.yaml;
       fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 1.1.3
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -93,23 +93,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990362978
-    seconds: 57
+    nanos: 33565125
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the controller manager pod specification file ownership is
     set to root:root (Automated)
   policy: 1.1.4-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: /bin/sh -c 'if test -e /etc/kubernetes/manifests/kube-controller-manager.yaml;
       then stat -c %U:%G /etc/kubernetes/manifests/kube-controller-manager.yaml; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.4
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -121,23 +121,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990364400
-    seconds: 57
+    nanos: 33566980
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the scheduler pod specification file permissions are set to
     600 or more restrictive (Automated)
   policy: 1.1.5-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=600
     audit: /bin/sh -c 'if test -e /etc/kubernetes/manifests/kube-scheduler.yaml; then
       stat -c permissions=%a /etc/kubernetes/manifests/kube-scheduler.yaml; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 1.1.5
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -149,23 +149,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990365462
-    seconds: 57
+    nanos: 33568379
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the scheduler pod specification file ownership is set to root:root
     (Automated)
   policy: 1.1.6-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: /bin/sh -c 'if test -e /etc/kubernetes/manifests/kube-scheduler.yaml; then
       stat -c %U:%G /etc/kubernetes/manifests/kube-scheduler.yaml; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.6
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -177,23 +177,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990366602
-    seconds: 57
+    nanos: 33569982
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the etcd pod specification file permissions are set to 600
     or more restrictive (Automated)
   policy: 1.1.7-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "true"
     actual_value: permissions=600
     audit: /bin/sh -c 'if test -e /etc/kubernetes/manifests/etcd.yaml; then find /etc/kubernetes/manifests/etcd.yaml
       -name '*etcd*' | xargs stat -c permissions=%a; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 1.1.7
+    isMultiple: "true"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -207,23 +207,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990367895
-    seconds: 57
+    nanos: 33571021
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the etcd pod specification file ownership is set to root:root
     (Automated)
   policy: 1.1.8-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "true"
     actual_value: root:root
     audit: /bin/sh -c 'if test -e /etc/kubernetes/manifests/etcd.yaml; then find /etc/kubernetes/manifests/etcd.yaml
       -name '*etcd*' | xargs stat -c %U:%G; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.8
+    isMultiple: "true"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -237,24 +237,24 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990368718
-    seconds: 57
+    nanos: 33571954
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the Container Network Interface file permissions are set to
     600 or more restrictive (Manual)
   policy: 1.1.9-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "true"
     actual_value: ""
     audit: |
       ps -ef | grep kubelet | grep -- --cni-conf-dir | sed 's%.*cni-conf-dir[= ]\([^ ]*\).*%\1%' | xargs -I{} find {} -mindepth 1 | xargs --no-run-if-empty stat -c permissions=%a
       find /var/lib/cni/networks -type f 2> /dev/null | xargs --no-run-if-empty stat -c permissions=%a
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''permissions'' is present'
     index: 1.1.9
+    isMultiple: "true"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -265,24 +265,24 @@ results:
     type: ""
   result: warn
   rule: Control Plane Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990369618
-    seconds: 57
+    nanos: 33573152
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the Container Network Interface file ownership is set to root:root
     (Manual)
   policy: 1.1.10-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "true"
     actual_value: ""
     audit: |
       ps -ef | grep kubelet | grep -- --cni-conf-dir | sed 's%.*cni-conf-dir[= ]\([^ ]*\).*%\1%' | xargs -I{} find {} -mindepth 1 | xargs --no-run-if-empty stat -c %U:%G
       find /var/lib/cni/networks -type f 2> /dev/null | xargs --no-run-if-empty stat -c %U:%G
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.10
+    isMultiple: "true"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -295,18 +295,15 @@ results:
     type: ""
   result: warn
   rule: Control Plane Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990370930
-    seconds: 57
+    nanos: 33596154
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the etcd data directory permissions are set to 700 or more
     restrictive (Automated)
   policy: 1.1.11-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=700
     audit: |
       DATA_DIR=''
@@ -315,8 +312,11 @@ results:
       done
       if ! test -d "$DATA_DIR"; then DATA_DIR=/var/lib/etcd/default.etcd; fi
       stat -c permissions=%a "$DATA_DIR"
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 700, expected 700 or more restrictive
     index: 1.1.11
+    isMultiple: "false"
     reason: ""
     remediation: |
       On the etcd server node, get the etcd data directory, passed as an argument --data-dir,
@@ -332,17 +332,14 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990372201
-    seconds: 57
+    nanos: 33597303
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the etcd data directory ownership is set to etcd:etcd (Automated)
   policy: 1.1.12-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: |
       DATA_DIR=''
@@ -351,8 +348,11 @@ results:
       done
       if ! test -d "$DATA_DIR"; then DATA_DIR=/var/lib/etcd/default.etcd; fi
       stat -c %U:%G "$DATA_DIR"
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''etcd:etcd'' is present'
     index: 1.1.12
+    isMultiple: "false"
     reason: ""
     remediation: |
       On the etcd server node, get the etcd data directory, passed as an argument --data-dir,
@@ -368,23 +368,23 @@ results:
   result: fail
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990372987
-    seconds: 57
+    nanos: 33598498
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admin.conf file permissions are set to 600 or more restrictive
     (Automated)
   policy: 1.1.13-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=600
     audit: /bin/sh -c 'if test -e /etc/kubernetes/admin.conf; then stat -c permissions=%a
       /etc/kubernetes/admin.conf; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 1.1.13
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -396,22 +396,22 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990373862
-    seconds: 57
+    nanos: 33599542
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admin.conf file ownership is set to root:root (Automated)
   policy: 1.1.14-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: /bin/sh -c 'if test -e /etc/kubernetes/admin.conf; then stat -c %U:%G /etc/kubernetes/admin.conf;
       fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.14
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -423,23 +423,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990374627
-    seconds: 57
+    nanos: 33600623
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the scheduler.conf file permissions are set to 600 or more
     restrictive (Automated)
   policy: 1.1.15-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=600
     audit: /bin/sh -c 'if test -e /etc/kubernetes/scheduler.conf; then stat -c permissions=%a
       /etc/kubernetes/scheduler.conf; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 1.1.15
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -453,22 +453,22 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990375486
-    seconds: 57
+    nanos: 33614768
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the scheduler.conf file ownership is set to root:root (Automated)
   policy: 1.1.16-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: /bin/sh -c 'if test -e /etc/kubernetes/scheduler.conf; then stat -c %U:%G
       /etc/kubernetes/scheduler.conf; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.16
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -482,23 +482,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990376689
-    seconds: 57
+    nanos: 33615885
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the controller-manager.conf file permissions are set to 600
     or more restrictive (Automated)
   policy: 1.1.17-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=600
     audit: /bin/sh -c 'if test -e /etc/kubernetes/controller-manager.conf; then stat
       -c permissions=%a /etc/kubernetes/controller-manager.conf; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 1.1.17
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -512,23 +512,23 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990377641
-    seconds: 57
+    nanos: 33616999
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the controller-manager.conf file ownership is set to root:root
     (Automated)
   policy: 1.1.18-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: /bin/sh -c 'if test -e /etc/kubernetes/controller-manager.conf; then stat
       -c %U:%G /etc/kubernetes/controller-manager.conf; fi'
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.18
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -542,18 +542,15 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990379265
-    seconds: 57
+    nanos: 33618688
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the Kubernetes PKI directory and file ownership is set to root:root
     (Automated)
   policy: 1.1.19-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "true"
     actual_value: |-
       root:root
       root:root
@@ -580,8 +577,11 @@ results:
       root:root
       root:root
     audit: find /etc/kubernetes/pki/ | xargs stat -c %U:%G
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 1.1.19
+    isMultiple: "true"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -595,18 +595,15 @@ results:
   result: pass
   rule: Control Plane Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990380091
-    seconds: 57
+    nanos: 33619668
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the Kubernetes PKI certificate file permissions are set to
     600 or more restrictive (Manual)
   policy: 1.1.20-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "true"
     actual_value: |-
       permissions=644
       permissions=644
@@ -619,8 +616,11 @@ results:
       permissions=644
       permissions=644
     audit: find /etc/kubernetes/pki/ -name '*.crt' | xargs stat -c permissions=%a
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 644, expected 600 or more restrictive
     index: 1.1.20
+    isMultiple: "true"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -633,17 +633,14 @@ results:
     type: ""
   result: warn
   rule: Control Plane Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990380885
-    seconds: 57
+    nanos: 33620933
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the Kubernetes PKI key file permissions are set to 600 (Manual)
   policy: 1.1.21-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "true"
     actual_value: |-
       permissions=600
       permissions=600
@@ -657,8 +654,11 @@ results:
       permissions=600
       permissions=600
     audit: find /etc/kubernetes/pki/ -name '*.key' | xargs stat -c permissions=%a
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 1.1.21
+    isMultiple: "true"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the control plane node.
@@ -671,18 +671,15 @@ results:
     type: ""
   result: pass
   rule: Control Plane Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990381765
-    seconds: 57
+    nanos: 33622737
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --anonymous-auth argument is set to false (Manual)
   policy: 1.2.1-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -697,8 +694,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--anonymous-auth'' is present'
     index: 1.2.1
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -711,18 +711,15 @@ results:
     type: ""
   result: warn
   rule: API Server
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990386347
-    seconds: 57
+    nanos: 33623944
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --token-auth-file parameter is not set (Automated)
   policy: 1.2.2-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -737,8 +734,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--token-auth-file'' is not present'
     index: 1.2.2
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the documentation and configure alternate mechanisms for authentication. Then,
@@ -752,18 +752,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990387323
-    seconds: 57
+    nanos: 33625109
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --DenyServiceExternalIPs is not set (Automated)
   policy: 1.2.3-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -778,9 +775,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--enable-admission-plugins'' does not have ''DenyServiceExternalIPs''
       OR ''--enable-admission-plugins'' is not present'
     index: 1.2.3
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -794,19 +794,16 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990388184
-    seconds: 57
+    nanos: 33626091
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --kubelet-client-certificate and --kubelet-client-key arguments
     are set as appropriate (Automated)
   policy: 1.2.4-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -821,9 +818,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--kubelet-client-certificate'' is present AND ''--kubelet-client-key''
       is present'
     index: 1.2.4
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and set up the TLS connection between the
@@ -843,19 +843,16 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990389103
-    seconds: 57
+    nanos: 33627227
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --kubelet-certificate-authority argument is set as appropriate
     (Automated)
   policy: 1.2.5-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -870,8 +867,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--kubelet-certificate-authority'' is present'
     index: 1.2.5
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and setup the TLS connection between
@@ -889,19 +889,16 @@ results:
   result: fail
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990389973
-    seconds: 57
+    nanos: 33628527
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --authorization-mode argument is not set to AlwaysAllow
     (Automated)
   policy: 1.2.6-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -916,8 +913,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--authorization-mode'' does not have ''AlwaysAllow'''
     index: 1.2.6
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -933,18 +933,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990390848
-    seconds: 57
+    nanos: 33641044
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --authorization-mode argument includes Node (Automated)
   policy: 1.2.7-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -959,8 +956,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--authorization-mode'' has ''Node'''
     index: 1.2.7
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -974,18 +974,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990392000
-    seconds: 57
+    nanos: 33651699
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --authorization-mode argument includes RBAC (Automated)
   policy: 1.2.8-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1000,8 +997,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--authorization-mode'' has ''RBAC'''
     index: 1.2.8
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1015,18 +1015,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990392791
-    seconds: 57
+    nanos: 33652711
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admission control plugin EventRateLimit is set (Manual)
   policy: 1.2.9-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1041,8 +1038,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--enable-admission-plugins'' has ''EventRateLimit'''
     index: 1.2.9
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and set the desired limits in a configuration file.
@@ -1059,18 +1059,15 @@ results:
     type: ""
   result: warn
   rule: API Server
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990393667
-    seconds: 57
+    nanos: 33654046
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admission control plugin AlwaysAdmit is not set (Automated)
   policy: 1.2.10-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1085,9 +1082,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--enable-admission-plugins'' does not have ''AlwaysAdmit''
       OR ''--enable-admission-plugins'' is not present'
     index: 1.2.10
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1101,18 +1101,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990394885
-    seconds: 57
+    nanos: 33655239
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admission control plugin AlwaysPullImages is set (Manual)
   policy: 1.2.11-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1127,8 +1124,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--enable-admission-plugins'' has ''AlwaysPullImages'''
     index: 1.2.11
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1143,19 +1143,16 @@ results:
     type: ""
   result: warn
   rule: API Server
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990395823
-    seconds: 57
+    nanos: 33656207
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admission control plugin SecurityContextDeny is set if
     PodSecurityPolicy is not used (Manual)
   policy: 1.2.12-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1170,9 +1167,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--enable-admission-plugins'' has ''SecurityContextDeny'' OR
       ''--enable-admission-plugins'' has ''PodSecurityPolicy'''
     index: 1.2.12
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1187,18 +1187,15 @@ results:
     type: ""
   result: warn
   rule: API Server
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990396702
-    seconds: 57
+    nanos: 33657288
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admission control plugin ServiceAccount is set (Automated)
   policy: 1.2.13-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1213,9 +1210,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--disable-admission-plugins'' is present OR ''--disable-admission-plugins''
       is not present'
     index: 1.2.13
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the documentation and create ServiceAccount objects as per your environment.
@@ -1231,18 +1231,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990399548
-    seconds: 57
+    nanos: 33661217
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admission control plugin NamespaceLifecycle is set (Automated)
   policy: 1.2.14-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1257,9 +1254,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--disable-admission-plugins'' is present OR ''--disable-admission-plugins''
       is not present'
     index: 1.2.14
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1273,18 +1273,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990400417
-    seconds: 57
+    nanos: 33662448
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the admission control plugin NodeRestriction is set (Automated)
   policy: 1.2.15-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1299,8 +1296,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--enable-admission-plugins'' has ''NodeRestriction'''
     index: 1.2.15
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and configure NodeRestriction plug-in on kubelets.
@@ -1318,18 +1318,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990401262
-    seconds: 57
+    nanos: 33663699
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --secure-port argument is not set to 0 (Automated)
   policy: 1.2.16-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1344,9 +1341,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--secure-port'' is greater than 0 OR ''--secure-port'' is
       not present'
     index: 1.2.16
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1360,18 +1360,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990402067
-    seconds: 57
+    nanos: 33664842
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --profiling argument is set to false (Automated)
   policy: 1.2.17-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1386,8 +1383,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--profiling'' is present'
     index: 1.2.17
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1401,18 +1401,15 @@ results:
   result: fail
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990403457
-    seconds: 57
+    nanos: 33685193
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --audit-log-path argument is set (Automated)
   policy: 1.2.18-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1427,8 +1424,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--audit-log-path'' is present'
     index: 1.2.18
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1444,19 +1444,16 @@ results:
   result: fail
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990404366
-    seconds: 57
+    nanos: 33686526
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --audit-log-maxage argument is set to 30 or as appropriate
     (Automated)
   policy: 1.2.19-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1471,8 +1468,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--audit-log-maxage'' is present'
     index: 1.2.19
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1488,19 +1488,16 @@ results:
   result: fail
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990405204
-    seconds: 57
+    nanos: 33687628
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --audit-log-maxbackup argument is set to 10 or as appropriate
     (Automated)
   policy: 1.2.20-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1515,8 +1512,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--audit-log-maxbackup'' is present'
     index: 1.2.20
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1532,19 +1532,16 @@ results:
   result: fail
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990406086
-    seconds: 57
+    nanos: 33690022
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --audit-log-maxsize argument is set to 100 or as appropriate
     (Automated)
   policy: 1.2.21-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1559,8 +1556,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--audit-log-maxsize'' is present'
     index: 1.2.21
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1574,21 +1574,21 @@ results:
   result: fail
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990407207
-    seconds: 57
+    nanos: 33691804
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --request-timeout argument is set as appropriate (Manual)
   policy: 1.2.22-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 1.2.22
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1601,18 +1601,15 @@ results:
     type: manual
   result: warn
   rule: API Server
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990408057
-    seconds: 57
+    nanos: 33693031
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --service-account-lookup argument is set to true (Automated)
   policy: 1.2.23-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1627,9 +1624,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--service-account-lookup'' is not present OR ''--service-account-lookup''
       is present'
     index: 1.2.23
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1647,19 +1647,16 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990409132
-    seconds: 57
+    nanos: 33704325
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --service-account-key-file argument is set as appropriate
     (Automated)
   policy: 1.2.24-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1674,8 +1671,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--service-account-key-file'' is present'
     index: 1.2.24
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1691,19 +1691,16 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990410933
-    seconds: 57
+    nanos: 33706555
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --etcd-certfile and --etcd-keyfile arguments are set as
     appropriate (Automated)
   policy: 1.2.25-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1718,8 +1715,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--etcd-certfile'' is present AND ''--etcd-keyfile'' is present'
     index: 1.2.25
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and set up the TLS connection between the apiserver and etcd.
@@ -1737,19 +1737,16 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990411825
-    seconds: 57
+    nanos: 33707507
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --tls-cert-file and --tls-private-key-file arguments are
     set as appropriate (Automated)
   policy: 1.2.26-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1764,9 +1761,12 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--tls-cert-file'' is present AND ''--tls-private-key-file''
       is present'
     index: 1.2.26
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and set up the TLS connection on the apiserver.
@@ -1784,18 +1784,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990412737
-    seconds: 57
+    nanos: 33710532
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --client-ca-file argument is set as appropriate (Automated)
   policy: 1.2.27-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1810,8 +1807,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--client-ca-file'' is present'
     index: 1.2.27
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and set up the TLS connection on the apiserver.
@@ -1827,18 +1827,15 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990413536
-    seconds: 57
+    nanos: 33712589
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --etcd-cafile argument is set as appropriate (Automated)
   policy: 1.2.28-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1853,8 +1850,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--etcd-cafile'' is present'
     index: 1.2.28
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and set up the TLS connection between the apiserver and etcd.
@@ -1870,19 +1870,16 @@ results:
   result: pass
   rule: API Server
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990414598
-    seconds: 57
+    nanos: 33714466
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --encryption-provider-config argument is set as appropriate
     (Manual)
   policy: 1.2.29-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1897,8 +1894,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--encryption-provider-config'' is present'
     index: 1.2.29
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and configure a EncryptionConfig file.
@@ -1913,23 +1913,23 @@ results:
     type: ""
   result: warn
   rule: API Server
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990415384
-    seconds: 57
+    nanos: 33716033
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that encryption providers are appropriately configured (Manual)
   policy: 1.2.30-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: |
       ENCRYPTION_PROVIDER_CONFIG=$(ps -ef | grep kube-apiserver | grep -- --encryption-provider-config | sed 's%.*encryption-provider-config[= ]\([^ ]*\).*%\1%')
       if test -e $ENCRYPTION_PROVIDER_CONFIG; then grep -A1 'providers:' $ENCRYPTION_PROVIDER_CONFIG | tail -n1 | grep -o "[A-Za-z]*" | sed 's/^/provider=/'; fi
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''provider'' is present'
     index: 1.2.30
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the Kubernetes documentation and configure a EncryptionConfig file.
@@ -1940,19 +1940,16 @@ results:
     type: ""
   result: warn
   rule: API Server
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990416221
-    seconds: 57
+    nanos: 33717341
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the API Server only makes use of Strong Cryptographic Ciphers
     (Manual)
   policy: 1.2.31-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -1967,8 +1964,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--tls-cipher-suites'' is present'
     index: 1.2.31
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
@@ -1995,19 +1995,16 @@ results:
     type: ""
   result: warn
   rule: API Server
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990417031
-    seconds: 57
+    nanos: 34110572
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --terminated-pod-gc-threshold argument is set as appropriate
     (Manual)
   policy: 1.3.1-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46550     321  2 15:33 ?        00:01:39 kube-controller-manager
+    actual_value: root       27181     351  2 03:58 ?        00:05:07 kube-controller-manager
       --allocate-node-cidrs=true --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
       --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf --bind-address=127.0.0.1
       --client-ca-file=/etc/kubernetes/pki/ca.crt --cluster-cidr=10.244.0.0/16 --cluster-name=kind
@@ -2017,8 +2014,11 @@ results:
       --root-ca-file=/etc/kubernetes/pki/ca.crt --service-account-private-key-file=/etc/kubernetes/pki/sa.key
       --service-cluster-ip-range=10.96.0.0/16 --use-service-account-credentials=true
     audit: /bin/ps -ef | grep kube-controller-manager | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--terminated-pod-gc-threshold'' is present'
     index: 1.3.1
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -2031,18 +2031,15 @@ results:
     type: ""
   result: warn
   rule: Controller Manager
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990418049
-    seconds: 57
+    nanos: 34113428
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --profiling argument is set to false (Automated)
   policy: 1.3.2-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46550     321  2 15:33 ?        00:01:39 kube-controller-manager
+    actual_value: root       27181     351  2 03:58 ?        00:05:07 kube-controller-manager
       --allocate-node-cidrs=true --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
       --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf --bind-address=127.0.0.1
       --client-ca-file=/etc/kubernetes/pki/ca.crt --cluster-cidr=10.244.0.0/16 --cluster-name=kind
@@ -2052,8 +2049,11 @@ results:
       --root-ca-file=/etc/kubernetes/pki/ca.crt --service-account-private-key-file=/etc/kubernetes/pki/sa.key
       --service-cluster-ip-range=10.96.0.0/16 --use-service-account-credentials=true
     audit: /bin/ps -ef | grep kube-controller-manager | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--profiling'' is present'
     index: 1.3.2
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -2067,19 +2067,16 @@ results:
   result: fail
   rule: Controller Manager
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990418851
-    seconds: 57
+    nanos: 34116470
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --use-service-account-credentials argument is set to true
     (Automated)
   policy: 1.3.3-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46550     321  2 15:33 ?        00:01:39 kube-controller-manager
+    actual_value: root       27181     351  2 03:58 ?        00:05:07 kube-controller-manager
       --allocate-node-cidrs=true --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
       --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf --bind-address=127.0.0.1
       --client-ca-file=/etc/kubernetes/pki/ca.crt --cluster-cidr=10.244.0.0/16 --cluster-name=kind
@@ -2089,8 +2086,11 @@ results:
       --root-ca-file=/etc/kubernetes/pki/ca.crt --service-account-private-key-file=/etc/kubernetes/pki/sa.key
       --service-cluster-ip-range=10.96.0.0/16 --use-service-account-credentials=true
     audit: /bin/ps -ef | grep kube-controller-manager | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--use-service-account-credentials'' is not equal to ''false'''
     index: 1.3.3
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -2104,19 +2104,16 @@ results:
   result: pass
   rule: Controller Manager
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990420315
-    seconds: 57
+    nanos: 34125804
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --service-account-private-key-file argument is set as appropriate
     (Automated)
   policy: 1.3.4-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46550     321  2 15:33 ?        00:01:39 kube-controller-manager
+    actual_value: root       27181     351  2 03:58 ?        00:05:07 kube-controller-manager
       --allocate-node-cidrs=true --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
       --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf --bind-address=127.0.0.1
       --client-ca-file=/etc/kubernetes/pki/ca.crt --cluster-cidr=10.244.0.0/16 --cluster-name=kind
@@ -2126,8 +2123,11 @@ results:
       --root-ca-file=/etc/kubernetes/pki/ca.crt --service-account-private-key-file=/etc/kubernetes/pki/sa.key
       --service-cluster-ip-range=10.96.0.0/16 --use-service-account-credentials=true
     audit: /bin/ps -ef | grep kube-controller-manager | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--service-account-private-key-file'' is present'
     index: 1.3.4
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -2143,18 +2143,15 @@ results:
   result: pass
   rule: Controller Manager
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990421174
-    seconds: 57
+    nanos: 34127315
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --root-ca-file argument is set as appropriate (Automated)
   policy: 1.3.5-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46550     321  2 15:33 ?        00:01:39 kube-controller-manager
+    actual_value: root       27181     351  2 03:58 ?        00:05:07 kube-controller-manager
       --allocate-node-cidrs=true --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
       --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf --bind-address=127.0.0.1
       --client-ca-file=/etc/kubernetes/pki/ca.crt --cluster-cidr=10.244.0.0/16 --cluster-name=kind
@@ -2164,8 +2161,11 @@ results:
       --root-ca-file=/etc/kubernetes/pki/ca.crt --service-account-private-key-file=/etc/kubernetes/pki/sa.key
       --service-cluster-ip-range=10.96.0.0/16 --use-service-account-credentials=true
     audit: /bin/ps -ef | grep kube-controller-manager | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--root-ca-file'' is present'
     index: 1.3.5
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -2179,19 +2179,16 @@ results:
   result: pass
   rule: Controller Manager
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990421955
-    seconds: 57
+    nanos: 34136000
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the RotateKubeletServerCertificate argument is set to true
     (Automated)
   policy: 1.3.6-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46550     321  2 15:33 ?        00:01:39 kube-controller-manager
+    actual_value: root       27181     351  2 03:58 ?        00:05:07 kube-controller-manager
       --allocate-node-cidrs=true --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
       --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf --bind-address=127.0.0.1
       --client-ca-file=/etc/kubernetes/pki/ca.crt --cluster-cidr=10.244.0.0/16 --cluster-name=kind
@@ -2201,9 +2198,12 @@ results:
       --root-ca-file=/etc/kubernetes/pki/ca.crt --service-account-private-key-file=/etc/kubernetes/pki/sa.key
       --service-cluster-ip-range=10.96.0.0/16 --use-service-account-credentials=true
     audit: /bin/ps -ef | grep kube-controller-manager | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--feature-gates'' is present OR ''--feature-gates'' is not
       present'
     index: 1.3.6
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -2217,18 +2217,15 @@ results:
   result: pass
   rule: Controller Manager
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990422718
-    seconds: 57
+    nanos: 34148045
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
   policy: 1.3.7-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46550     321  2 15:33 ?        00:01:39 kube-controller-manager
+    actual_value: root       27181     351  2 03:58 ?        00:05:07 kube-controller-manager
       --allocate-node-cidrs=true --authentication-kubeconfig=/etc/kubernetes/controller-manager.conf
       --authorization-kubeconfig=/etc/kubernetes/controller-manager.conf --bind-address=127.0.0.1
       --client-ca-file=/etc/kubernetes/pki/ca.crt --cluster-cidr=10.244.0.0/16 --cluster-name=kind
@@ -2238,9 +2235,12 @@ results:
       --root-ca-file=/etc/kubernetes/pki/ca.crt --service-account-private-key-file=/etc/kubernetes/pki/sa.key
       --service-cluster-ip-range=10.96.0.0/16 --use-service-account-credentials=true
     audit: /bin/ps -ef | grep kube-controller-manager | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--bind-address'' is equal to ''127.0.0.1'' OR ''--bind-address''
       is not present'
     index: 1.3.7
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Controller Manager pod specification file /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -2252,23 +2252,23 @@ results:
   result: pass
   rule: Controller Manager
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990423575
-    seconds: 57
+    nanos: 34161120
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --profiling argument is set to false (Automated)
   policy: 1.4.1-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46540     343  0 15:33 ?        00:00:18 kube-scheduler
+    actual_value: root       27164     395  0 03:58 ?        00:00:57 kube-scheduler
       --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
       --bind-address=127.0.0.1 --kubeconfig=/etc/kubernetes/scheduler.conf --leader-elect=true
     audit: /bin/ps -ef | grep kube-scheduler | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--profiling'' is present'
     index: 1.4.1
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Scheduler pod specification file /etc/kubernetes/manifests/kube-scheduler.yaml file
@@ -2282,24 +2282,24 @@ results:
   result: fail
   rule: Scheduler
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990424635
-    seconds: 57
+    nanos: 34169438
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --bind-address argument is set to 127.0.0.1 (Automated)
   policy: 1.4.2-Control Plane Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root       46540     343  0 15:33 ?        00:00:18 kube-scheduler
+    actual_value: root       27164     395  0 03:58 ?        00:00:57 kube-scheduler
       --authentication-kubeconfig=/etc/kubernetes/scheduler.conf --authorization-kubeconfig=/etc/kubernetes/scheduler.conf
       --bind-address=127.0.0.1 --kubeconfig=/etc/kubernetes/scheduler.conf --leader-elect=true
     audit: /bin/ps -ef | grep kube-scheduler | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--bind-address'' is equal to ''127.0.0.1'' OR ''--bind-address''
       is not present'
     index: 1.4.2
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the Scheduler pod specification file /etc/kubernetes/manifests/kube-scheduler.yaml
@@ -2311,26 +2311,26 @@ results:
   result: pass
   rule: Scheduler
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990425381
-    seconds: 57
+    nanos: 34171056
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --cert-file and --key-file arguments are set as appropriate
     (Automated)
   policy: 2.1-Etcd Node Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
-      '\n'
-    IsMultiple: "false"
     actual_value: |-
-      root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
-      root         646     342  1 Aug22 ?        00:34:03 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
-      1000       48387   48337  5 16:36 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
+      root         589     331  5 Aug24 ?        00:40:25 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
+      root         664     352  1 Aug24 ?        00:07:21 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+      1000      136322  136271  1 06:58 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
     audit: /bin/ps -ef | /bin/grep etcd | /bin/grep -v grep
+    auditConfig: ""
+    auditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
+      '\n'
     expected_result: '''--cert-file'' is present AND ''--key-file'' is present'
     index: "2.1"
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the etcd service documentation and configure TLS encryption.
@@ -2348,25 +2348,25 @@ results:
   result: pass
   rule: Etcd Node Configuration
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990426645
-    seconds: 57
+    nanos: 34172725
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --client-cert-auth argument is set to true (Automated)
   policy: 2.2-Etcd Node Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
-      '\n'
-    IsMultiple: "false"
     actual_value: |-
-      root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
-      root         646     342  1 Aug22 ?        00:34:03 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
-      1000       48387   48337  4 16:36 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
+      root         589     331  5 Aug24 ?        00:40:25 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
+      root         664     352  1 Aug24 ?        00:07:21 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+      1000      136322  136271  1 06:58 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
     audit: /bin/ps -ef | /bin/grep etcd | /bin/grep -v grep
+    auditConfig: ""
+    auditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
+      '\n'
     expected_result: '''--client-cert-auth'' is equal to ''true'''
     index: "2.2"
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the master
@@ -2380,26 +2380,26 @@ results:
   result: pass
   rule: Etcd Node Configuration
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990427637
-    seconds: 57
+    nanos: 34174200
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --auto-tls argument is not set to true (Automated)
   policy: 2.3-Etcd Node Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
-      '\n'
-    IsMultiple: "false"
     actual_value: |-
       PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       HOSTNAME=kind-control-plane
       SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
       HOME=/root
     audit: /bin/ps -ef | /bin/grep etcd | /bin/grep -v grep
+    auditConfig: ""
+    auditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
+      '\n'
     expected_result: '''ETCD_AUTO_TLS'' is not present OR ''ETCD_AUTO_TLS'' is present'
     index: "2.3"
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the master
@@ -2413,26 +2413,26 @@ results:
   result: pass
   rule: Etcd Node Configuration
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990428463
-    seconds: 57
+    nanos: 34175521
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --peer-cert-file and --peer-key-file arguments are set
     as appropriate (Automated)
   policy: 2.4-Etcd Node Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
-      '\n'
-    IsMultiple: "false"
     actual_value: |-
-      root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
-      root         646     342  1 Aug22 ?        00:34:03 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
-      1000       48387   48337  4 16:36 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
+      root         589     331  5 Aug24 ?        00:40:25 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
+      root         664     352  1 Aug24 ?        00:07:21 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+      1000      136322  136271  1 06:58 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
     audit: /bin/ps -ef | /bin/grep etcd | /bin/grep -v grep
+    auditConfig: ""
+    auditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
+      '\n'
     expected_result: '''--peer-cert-file'' is present AND ''--peer-key-file'' is present'
     index: "2.4"
+    isMultiple: "false"
     reason: ""
     remediation: |
       Follow the etcd service documentation and configure peer TLS encryption as appropriate
@@ -2452,25 +2452,25 @@ results:
   result: pass
   rule: Etcd Node Configuration
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990429281
-    seconds: 57
+    nanos: 45317078
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --peer-client-cert-auth argument is set to true (Automated)
   policy: 2.5-Etcd Node Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
-      '\n'
-    IsMultiple: "false"
     actual_value: |-
-      root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
-      root         646     342  1 Aug22 ?        00:34:03 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
-      1000       48387   48337  4 16:36 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
+      root         589     331  5 Aug24 ?        00:40:25 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
+      root         664     352  1 Aug24 ?        00:07:21 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+      1000      136322  136271  1 06:58 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
     audit: /bin/ps -ef | /bin/grep etcd | /bin/grep -v grep
+    auditConfig: ""
+    auditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
+      '\n'
     expected_result: '''--peer-client-cert-auth'' is equal to ''true'''
     index: "2.5"
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the master
@@ -2484,27 +2484,27 @@ results:
   result: pass
   rule: Etcd Node Configuration
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990430736
-    seconds: 57
+    nanos: 45329893
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --peer-auto-tls argument is not set to true (Automated)
   policy: 2.6-Etcd Node Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
-      '\n'
-    IsMultiple: "false"
     actual_value: |-
       PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
       HOSTNAME=kind-control-plane
       SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
       HOME=/root
     audit: /bin/ps -ef | /bin/grep etcd | /bin/grep -v grep
+    auditConfig: ""
+    auditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
+      '\n'
     expected_result: '''ETCD_PEER_AUTO_TLS'' is not present OR ''ETCD_PEER_AUTO_TLS''
       is present'
     index: "2.6"
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the etcd pod specification file /etc/kubernetes/manifests/etcd.yaml on the master
@@ -2518,25 +2518,25 @@ results:
   result: pass
   rule: Etcd Node Configuration
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990431650
-    seconds: 57
+    nanos: 45331688
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that a unique Certificate Authority is used for etcd (Manual)
   policy: 2.7-Etcd Node Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
-      '\n'
-    IsMultiple: "false"
     actual_value: |-
-      root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
-      root         646     342  1 Aug22 ?        00:34:03 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
-      1000       48387   48337  4 16:36 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
+      root         589     331  5 Aug24 ?        00:40:25 kube-apiserver --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt --etcd-certfile=/etc/kubernetes/pki/apiserver-etcd-client.crt --etcd-keyfile=/etc/kubernetes/pki/apiserver-etcd-client.key --etcd-servers=https://127.0.0.1:2379 --kubelet-client-certificate=/etc/kubernetes/pki/apiserver-kubelet-client.crt --kubelet-client-key=/etc/kubernetes/pki/apiserver-kubelet-client.key --kubelet-preferred-address-types=InternalIP,ExternalIP,Hostname --proxy-client-cert-file=/etc/kubernetes/pki/front-proxy-client.crt --proxy-client-key-file=/etc/kubernetes/pki/front-proxy-client.key --requestheader-allowed-names=front-proxy-client --requestheader-client-ca-file=/etc/kubernetes/pki/front-proxy-ca.crt --requestheader-extra-headers-prefix=X-Remote-Extra- --requestheader-group-headers=X-Remote-Group --requestheader-username-headers=X-Remote-User --runtime-config= --secure-port=6443 --service-account-issuer=https://kubernetes.default.svc.cluster.local --service-account-key-file=/etc/kubernetes/pki/sa.pub --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16 --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
+      root         664     352  1 Aug24 ?        00:07:21 etcd --advertise-client-urls=https://172.18.0.2:2379 --cert-file=/etc/kubernetes/pki/etcd/server.crt --client-cert-auth=true --data-dir=/var/lib/etcd --experimental-initial-corrupt-check=true --initial-advertise-peer-urls=https://172.18.0.2:2380 --initial-cluster=kind-control-plane=https://172.18.0.2:2380 --key-file=/etc/kubernetes/pki/etcd/server.key --listen-client-urls=https://127.0.0.1:2379,https://172.18.0.2:2379 --listen-metrics-urls=http://127.0.0.1:2381 --listen-peer-urls=https://172.18.0.2:2380 --name=kind-control-plane --peer-cert-file=/etc/kubernetes/pki/etcd/peer.crt --peer-client-cert-auth=true --peer-key-file=/etc/kubernetes/pki/etcd/peer.key --peer-trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt --snapshot-count=10000 --trusted-ca-file=/etc/kubernetes/pki/etcd/ca.crt
+      1000      136322  136271  1 06:58 ?        00:00:00 ./policyreport -name kube-bench -category CIS Benchmarks -namespace kube-bench -kube-bench-image aquasec/kube-bench:v0.6.17 -kubeconfig $HOME/.kube/config -kube-bench-targets master,node,etcd,policies -kube-bench-benchmark cis-1.24
     audit: /bin/ps -ef | /bin/grep etcd | /bin/grep -v grep
+    auditConfig: ""
+    auditEnv: cat "/proc/$(/bin/ps -C etcd -o pid= | tr -d ' ')/environ" | tr '\0'
+      '\n'
     expected_result: '''--trusted-ca-file'' is present'
     index: "2.7"
+    isMultiple: "false"
     reason: ""
     remediation: |
       [Manual test]
@@ -2555,21 +2555,21 @@ results:
     type: ""
   result: pass
   rule: Etcd Node Configuration
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990432543
-    seconds: 57
+    nanos: 45333481
+    seconds: 56
 - category: CIS Benchmarks
   message: Client certificate authentication should not be used for users (Manual)
   policy: 3.1.1-Control Plane Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 3.1.1
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Alternative mechanisms provided by Kubernetes such as the use of OIDC should be
@@ -2580,18 +2580,15 @@ results:
     type: manual
   result: warn
   rule: Authentication and Authorization
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990434127
-    seconds: 57
+    nanos: 45336068
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that a minimal audit policy is created (Manual)
   policy: 3.2.1-Control Plane Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
-    actual_value: root         573     340 99 Aug22 ?        2-10:20:46 kube-apiserver
+    actual_value: root         589     331  5 Aug24 ?        00:40:25 kube-apiserver
       --advertise-address=172.18.0.2 --allow-privileged=true --authorization-mode=Node,RBAC
       --client-ca-file=/etc/kubernetes/pki/ca.crt --enable-admission-plugins=NodeRestriction
       --enable-bootstrap-token-auth=true --etcd-cafile=/etc/kubernetes/pki/etcd/ca.crt
@@ -2606,8 +2603,11 @@ results:
       --service-account-signing-key-file=/etc/kubernetes/pki/sa.key --service-cluster-ip-range=10.96.0.0/16
       --tls-cert-file=/etc/kubernetes/pki/apiserver.crt --tls-private-key-file=/etc/kubernetes/pki/apiserver.key
     audit: /bin/ps -ef | grep kube-apiserver | grep -v grep
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--audit-policy-file'' is present'
     index: 3.2.1
+    isMultiple: "false"
     reason: ""
     remediation: |
       Create an audit policy file for your cluster.
@@ -2616,21 +2616,21 @@ results:
     type: ""
   result: warn
   rule: Logging
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990435072
-    seconds: 57
+    nanos: 45346672
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the audit policy covers key security concerns (Manual)
   policy: 3.2.2-Control Plane Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 3.2.2
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Review the audit policy provided for the cluster and ensure that it covers
@@ -2655,24 +2655,24 @@ results:
     type: manual
   result: warn
   rule: Logging
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990436061
-    seconds: 57
+    nanos: 45347922
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the kubelet service file permissions are set to 600 or more
     restrictive (Automated)
   policy: 4.1.1-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=644
     audit: '/bin/sh -c ''if test -e /etc/systemd/system/kubelet.service.d/10-kubeadm.conf;
       then stat -c permissions=%a /etc/systemd/system/kubelet.service.d/10-kubeadm.conf;
       fi'' '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 644, expected 600 or more restrictive
     index: 4.1.1
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the each worker node.
@@ -2684,22 +2684,22 @@ results:
   result: fail
   rule: Worker Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990437291
-    seconds: 57
+    nanos: 45349034
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the kubelet service file ownership is set to root:root (Automated)
   policy: 4.1.2-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: '/bin/sh -c ''if test -e /etc/systemd/system/kubelet.service.d/10-kubeadm.conf;
       then stat -c %U:%G /etc/systemd/system/kubelet.service.d/10-kubeadm.conf; fi'' '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 4.1.2
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the each worker node.
@@ -2713,24 +2713,24 @@ results:
   result: pass
   rule: Worker Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990438671
-    seconds: 57
+    nanos: 45375017
+    seconds: 56
 - category: CIS Benchmarks
   message: If proxy kubeconfig file exists ensure permissions are set to 600 or more
     restrictive (Manual)
   policy: 4.1.3-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: '/bin/sh -c ''if test -e /etc/kubernetes/proxy.conf; then stat -c permissions=%a
       /etc/kubernetes/proxy.conf; fi'' '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''permissions'' is present OR ''/etc/kubernetes/proxy.conf''
       is not present'
     index: 4.1.3
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the each worker node.
@@ -2743,23 +2743,23 @@ results:
     type: ""
   result: pass
   rule: Worker Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990439528
-    seconds: 57
+    nanos: 45376422
+    seconds: 56
 - category: CIS Benchmarks
   message: If proxy kubeconfig file exists ensure ownership is set to root:root (Manual)
   policy: 4.1.4-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: '/bin/sh -c ''if test -e /etc/kubernetes/proxy.conf; then stat -c %U:%G
       /etc/kubernetes/proxy.conf; fi'' '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present OR ''/etc/kubernetes/proxy.conf'' is
       not present'
     index: 4.1.4
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the each worker node.
@@ -2770,23 +2770,23 @@ results:
     type: ""
   result: pass
   rule: Worker Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990440326
-    seconds: 57
+    nanos: 45377492
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --kubeconfig kubelet.conf file permissions are set to 600
     or more restrictive (Automated)
   policy: 4.1.5-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=600
     audit: '/bin/sh -c ''if test -e /etc/kubernetes/kubelet.conf; then stat -c permissions=%a
       /etc/kubernetes/kubelet.conf; fi'' '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 600, expected 600 or more restrictive
     index: 4.1.5
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the each worker node.
@@ -2800,23 +2800,23 @@ results:
   result: pass
   rule: Worker Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990441283
-    seconds: 57
+    nanos: 45518193
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --kubeconfig kubelet.conf file ownership is set to root:root
     (Automated)
   policy: 4.1.6-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: '/bin/sh -c ''if test -e /etc/kubernetes/kubelet.conf; then stat -c %U:%G
       /etc/kubernetes/kubelet.conf; fi'' '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 4.1.6
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the below command (based on the file location on your system) on the each worker node.
@@ -2830,25 +2830,25 @@ results:
   result: pass
   rule: Worker Node Configuration Files
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990442401
-    seconds: 57
+    nanos: 45520206
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the certificate authorities file permissions are set to 600
     or more restrictive (Manual)
   policy: 4.1.7-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=644
     audit: |
       CAFILE=$(ps -ef | grep kubelet | grep -v apiserver | grep -- --client-ca-file= | awk -F '--client-ca-file=' '{print $2}' | awk '{print $1}' | uniq)
       if test -z $CAFILE; then CAFILE=/etc/kubernetes/pki/ca.crt; fi
       if test -e $CAFILE; then stat -c permissions=%a $CAFILE; fi
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 644, expected 600 or more restrictive
     index: 4.1.7
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the following command to modify the file permissions of the
@@ -2859,25 +2859,25 @@ results:
     type: ""
   result: warn
   rule: Worker Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990443215
-    seconds: 57
+    nanos: 45524357
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the client certificate authorities file ownership is set to
     root:root (Manual)
   policy: 4.1.8-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: |
       CAFILE=$(ps -ef | grep kubelet | grep -v apiserver | grep -- --client-ca-file= | awk -F '--client-ca-file=' '{print $2}' | awk '{print $1}' | uniq)
       if test -z $CAFILE; then CAFILE=/etc/kubernetes/pki/ca.crt; fi
       if test -e $CAFILE; then stat -c %U:%G $CAFILE; fi
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is equal to ''root:root'''
     index: 4.1.8
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the following command to modify the ownership of the --client-ca-file.
@@ -2888,23 +2888,23 @@ results:
     type: ""
   result: pass
   rule: Worker Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990444100
-    seconds: 57
+    nanos: 45525516
+    seconds: 56
 - category: CIS Benchmarks
   message: If the kubelet config.yaml configuration file is being used validate permissions
     set to 600 or more restrictive (Manual)
   policy: 4.1.9-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: permissions=644
     audit: '/bin/sh -c ''if test -e /var/lib/kubelet/config.yaml; then stat -c permissions=%a
       /var/lib/kubelet/config.yaml; fi'' '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: permissions has permissions 644, expected 600 or more restrictive
     index: 4.1.9
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the following command (using the config file location identified in the Audit step)
@@ -2915,23 +2915,23 @@ results:
     type: ""
   result: warn
   rule: Worker Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990444959
-    seconds: 57
+    nanos: 45529026
+    seconds: 56
 - category: CIS Benchmarks
   message: If the kubelet config.yaml configuration file is being used validate file
     ownership is set to root:root (Manual)
   policy: 4.1.10-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: root:root
     audit: '/bin/sh -c ''if test -e /var/lib/kubelet/config.yaml; then stat -c %U:%G
       /var/lib/kubelet/config.yaml; fi'' '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''root:root'' is present'
     index: 4.1.10
+    isMultiple: "false"
     reason: ""
     remediation: |
       Run the following command (using the config file location identified in the Audit step)
@@ -2942,17 +2942,14 @@ results:
     type: ""
   result: pass
   rule: Worker Node Configuration Files
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990445782
-    seconds: 57
+    nanos: 45529993
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --anonymous-auth argument is set to false (Automated)
   policy: 4.2.1-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3005,8 +3002,11 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.authentication.anonymous.enabled}'' is equal to ''false'''
     index: 4.2.1
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `authentication: anonymous: enabled` to
@@ -3032,18 +3032,15 @@ results:
   result: pass
   rule: Kubelet
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990446626
-    seconds: 57
+    nanos: 45530889
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --authorization-mode argument is not set to AlwaysAllow
     (Automated)
   policy: 4.2.2-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3096,8 +3093,11 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.authorization.mode}'' does not have ''AlwaysAllow'''
     index: 4.2.2
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `authorization.mode` to Webhook. If
@@ -3121,17 +3121,14 @@ results:
   result: pass
   rule: Kubelet
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990447870
-    seconds: 57
+    nanos: 45531764
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --client-ca-file argument is set as appropriate (Automated)
   policy: 4.2.3-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3184,8 +3181,11 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.authentication.x509.clientCAFile}'' is present'
     index: 4.2.3
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `authentication.x509.clientCAFile` to
@@ -3211,17 +3211,14 @@ results:
   result: pass
   rule: Kubelet
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990448680
-    seconds: 57
+    nanos: 45532526
+    seconds: 56
 - category: CIS Benchmarks
   message: Verify that the --read-only-port argument is set to 0 (Manual)
   policy: 4.2.4-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3274,9 +3271,12 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.readOnlyPort}'' is present OR ''{.readOnlyPort}'' is not
       present'
     index: 4.2.4
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `readOnlyPort` to 0.
@@ -3299,18 +3299,15 @@ results:
     type: ""
   result: pass
   rule: Kubelet
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990449484
-    seconds: 57
+    nanos: 45533237
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --streaming-connection-idle-timeout argument is not set
     to 0 (Manual)
   policy: 4.2.5-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3363,9 +3360,12 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.streamingConnectionIdleTimeout}'' is not equal to ''0''
       OR ''{.streamingConnectionIdleTimeout}'' is not present'
     index: 4.2.5
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `streamingConnectionIdleTimeout` to a
@@ -3390,17 +3390,14 @@ results:
     type: ""
   result: pass
   rule: Kubelet
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990450266
-    seconds: 57
+    nanos: 45534109
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --protect-kernel-defaults argument is set to true (Automated)
   policy: 4.2.6-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3453,8 +3450,11 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.protectKernelDefaults}'' is present'
     index: 4.2.6
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `protectKernelDefaults` to `true`.
@@ -3478,17 +3478,14 @@ results:
   result: fail
   rule: Kubelet
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990451053
-    seconds: 57
+    nanos: 45536615
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --make-iptables-util-chains argument is set to true (Automated)
   policy: 4.2.7-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3541,9 +3538,12 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.makeIPTablesUtilChains}'' is present OR ''{.makeIPTablesUtilChains}''
       is not present'
     index: 4.2.7
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `makeIPTablesUtilChains` to `true`.
@@ -3567,23 +3567,23 @@ results:
   result: pass
   rule: Kubelet
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990451875
-    seconds: 57
+    nanos: 45541221
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --hostname-override argument is not set (Manual)
   policy: 4.2.8-Worker Node Security Configuration
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       UID          PID    PPID  C STIME TTY          TIME CMD
-      root         707       1  6 Aug22 ?        03:28:58 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime=remote --container-runtime-endpoint=unix:///run/containerd/containerd.sock --node-ip=172.18.0.2 --node-labels= --pod-infra-container-image=k8s.gcr.io/pause:3.7 --provider-id=kind://docker/kind/kind-control-plane --fail-swap-on=false --cgroup-root=/kubelet
+      root         727       1  1 Aug24 ?        00:07:49 /usr/bin/kubelet --bootstrap-kubeconfig=/etc/kubernetes/bootstrap-kubelet.conf --kubeconfig=/etc/kubernetes/kubelet.conf --config=/var/lib/kubelet/config.yaml --container-runtime=remote --container-runtime-endpoint=unix:///run/containerd/containerd.sock --node-ip=172.18.0.2 --node-labels= --pod-infra-container-image=k8s.gcr.io/pause:3.7 --provider-id=kind://docker/kind/kind-control-plane --fail-swap-on=false --cgroup-root=/kubelet
     audit: '/bin/ps -fC kubelet '
+    auditConfig: ""
+    auditEnv: ""
     expected_result: '''--hostname-override'' is not present'
     index: 4.2.8
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the kubelet service file /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
@@ -3602,18 +3602,15 @@ results:
     type: ""
   result: pass
   rule: Kubelet
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990452814
-    seconds: 57
+    nanos: 45542312
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the eventRecordQPS argument is set to a level which ensures
     appropriate event capture (Manual)
   policy: 4.2.9-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3666,9 +3663,12 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.eventRecordQPS}'' is present OR ''{.eventRecordQPS}'' is
       not present'
     index: 4.2.9
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `eventRecordQPS` to an appropriate level.
@@ -3689,18 +3689,15 @@ results:
     type: ""
   result: pass
   rule: Kubelet
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990453987
-    seconds: 57
+    nanos: 45543302
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --tls-cert-file and --tls-private-key-file arguments are
     set as appropriate (Manual)
   policy: 4.2.10-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3753,9 +3750,12 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.tlsCertFile}'' is present AND ''{.tlsPrivateKeyFile}'' is
       present'
     index: 4.2.10
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `tlsCertFile` to the location
@@ -3784,17 +3784,14 @@ results:
     type: ""
   result: warn
   rule: Kubelet
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990455063
-    seconds: 57
+    nanos: 45544003
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the --rotate-certificates argument is not set to false (Automated)
   policy: 4.2.11-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3847,9 +3844,12 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.rotateCertificates}'' is equal to ''true'' OR ''{.rotateCertificates}''
       is not present'
     index: 4.2.11
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to add the line `rotateCertificates` to `true` or
@@ -3875,18 +3875,15 @@ results:
   result: pass
   rule: Kubelet
   scored: true
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990455859
-    seconds: 57
+    nanos: 45544691
+    seconds: 56
 - category: CIS Benchmarks
   message: Verify that the RotateKubeletServerCertificate argument is set to true
     (Manual)
   policy: 4.2.12-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -3939,9 +3936,12 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{.featureGates.RotateKubeletServerCertificate}'' is present
       OR ''{.featureGates.RotateKubeletServerCertificate}'' is not present'
     index: 4.2.12
+    isMultiple: "false"
     reason: ""
     remediation: |
       Edit the kubelet service file /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
@@ -3960,18 +3960,15 @@ results:
     type: ""
   result: pass
   rule: Kubelet
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990456647
-    seconds: 57
+    nanos: 45545852
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the Kubelet only makes use of Strong Cryptographic Ciphers
     (Manual)
   policy: 4.2.13-Worker Node Security Configuration
   properties:
-    AuditConfig: /bin/cat /var/lib/kubelet/config.yaml
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: |-
       apiVersion: kubelet.config.k8s.io/v1beta1
       authentication:
@@ -4024,8 +4021,11 @@ results:
       syncFrequency: 0s
       volumeStatsAggPeriod: 0s
     audit: /bin/ps -fC kubelet
+    auditConfig: /bin/cat /var/lib/kubelet/config.yaml
+    auditEnv: ""
     expected_result: '''{range .tlsCipherSuites[:]}{}{'',''}{end}'' is present'
     index: 4.2.13
+    isMultiple: "false"
     reason: ""
     remediation: |
       If using a Kubelet config file, edit the file to set `TLSCipherSuites` to
@@ -4052,21 +4052,21 @@ results:
     type: ""
   result: warn
   rule: Kubelet
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990457446
-    seconds: 57
+    nanos: 45547198
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the cluster-admin role is only used where required (Manual)
   policy: 5.1.1-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.1.1
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Identify all clusterrolebindings to the cluster-admin role. Check if they are used and
@@ -4083,21 +4083,21 @@ results:
     type: manual
   result: warn
   rule: RBAC and Service Accounts
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990458338
-    seconds: 57
+    nanos: 45550069
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize access to secrets (Manual)
   policy: 5.1.2-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.1.2
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Where possible, remove get, list and watch access to Secret objects in the cluster.
@@ -4106,21 +4106,21 @@ results:
     type: manual
   result: warn
   rule: RBAC and Service Accounts
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990459202
-    seconds: 57
+    nanos: 45550959
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize wildcard use in Roles and ClusterRoles (Manual)
   policy: 5.1.3-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.1.3
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Where possible replace any use of wildcards in clusterroles and roles with specific
@@ -4131,21 +4131,21 @@ results:
     type: manual
   result: warn
   rule: RBAC and Service Accounts
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990460488
-    seconds: 57
+    nanos: 45551790
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize access to create pods (Manual)
   policy: 5.1.4-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.1.4
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Where possible, remove create access to pod objects in the cluster.
@@ -4154,21 +4154,21 @@ results:
     type: manual
   result: warn
   rule: RBAC and Service Accounts
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990461331
-    seconds: 57
+    nanos: 45552804
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that default service accounts are not actively used. (Manual)
   policy: 5.1.5-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.1.5
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Create explicit service accounts wherever a Kubernetes workload requires specific access
@@ -4183,21 +4183,21 @@ results:
     type: manual
   result: warn
   rule: RBAC and Service Accounts
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990462092
-    seconds: 57
+    nanos: 45553560
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that Service Account Tokens are only mounted where necessary (Manual)
   policy: 5.1.6-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.1.6
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Modify the definition of pods and service accounts which do not need to mount service
@@ -4208,21 +4208,21 @@ results:
     type: manual
   result: warn
   rule: RBAC and Service Accounts
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990462997
-    seconds: 57
+    nanos: 45554573
+    seconds: 56
 - category: CIS Benchmarks
   message: Avoid use of system:masters group (Manual)
   policy: 5.1.7-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.1.7
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Remove the system:masters group from all users in the cluster.
@@ -4231,22 +4231,22 @@ results:
     type: manual
   result: warn
   rule: RBAC and Service Accounts
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990463981
-    seconds: 57
+    nanos: 45557011
+    seconds: 56
 - category: CIS Benchmarks
   message: Limit use of the Bind, Impersonate and Escalate permissions in the Kubernetes
     cluster (Manual)
   policy: 5.1.8-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.1.8
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Where possible, remove the impersonate, bind and escalate rights from subjects.
@@ -4255,22 +4255,22 @@ results:
     type: manual
   result: warn
   rule: RBAC and Service Accounts
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990464813
-    seconds: 57
+    nanos: 45557734
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the cluster has at least one active policy control mechanism
     in place (Manual)
   policy: 5.2.1-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.1
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Ensure that either Pod Security Admission or an external policy control system is in place
@@ -4281,21 +4281,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990465599
-    seconds: 57
+    nanos: 45560213
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of privileged containers (Manual)
   policy: 5.2.2-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.2
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4306,22 +4306,22 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990466422
-    seconds: 57
+    nanos: 45561039
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of containers wishing to share the host process
     ID namespace (Automated)
   policy: 5.2.3-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.3
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4332,22 +4332,22 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990467165
-    seconds: 57
+    nanos: 45561881
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of containers wishing to share the host IPC namespace
     (Automated)
   policy: 5.2.4-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.4
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4358,22 +4358,22 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990467876
-    seconds: 57
+    nanos: 45562580
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of containers wishing to share the host network
     namespace (Automated)
   policy: 5.2.5-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.5
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4384,21 +4384,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990468640
-    seconds: 57
+    nanos: 45563341
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of containers with allowPrivilegeEscalation (Automated)
   policy: 5.2.6-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.6
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4409,21 +4409,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990469509
-    seconds: 57
+    nanos: 45566093
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of root containers (Automated)
   policy: 5.2.7-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.7
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Create a policy for each namespace in the cluster, ensuring that either `MustRunAsNonRoot`
@@ -4434,21 +4434,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990470435
-    seconds: 57
+    nanos: 45566977
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of containers with the NET_RAW capability (Automated)
   policy: 5.2.8-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.8
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4459,21 +4459,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990471282
-    seconds: 57
+    nanos: 45567741
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of containers with added capabilities (Automated)
   policy: 5.2.9-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.9
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Ensure that `allowedCapabilities` is not present in policies for the cluster unless
@@ -4484,21 +4484,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990472709
-    seconds: 57
+    nanos: 45570889
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of containers with capabilities assigned (Manual)
   policy: 5.2.10-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.10
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Review the use of capabilites in applications running on your cluster. Where a namespace
@@ -4511,21 +4511,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990473465
-    seconds: 57
+    nanos: 45571793
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of Windows HostProcess containers (Manual)
   policy: 5.2.11-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.11
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4536,21 +4536,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990474258
-    seconds: 57
+    nanos: 45572621
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of HostPath volumes (Manual)
   policy: 5.2.12-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.12
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4561,21 +4561,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990475061
-    seconds: 57
+    nanos: 45573254
+    seconds: 56
 - category: CIS Benchmarks
   message: Minimize the admission of containers which use HostPorts (Manual)
   policy: 5.2.13-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.2.13
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Add policies to each namespace in the cluster which has user workloads to restrict the
@@ -4586,21 +4586,21 @@ results:
     type: manual
   result: warn
   rule: Pod Security Standards
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990475913
-    seconds: 57
+    nanos: 45585617
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the CNI in use supports NetworkPolicies (Manual)
   policy: 5.3.1-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.3.1
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       If the CNI plugin in use does not support network policies, consideration should be given to
@@ -4613,21 +4613,21 @@ results:
     type: manual
   result: warn
   rule: Network Policies and CNI
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990476654
-    seconds: 57
+    nanos: 45587386
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that all Namespaces have NetworkPolicies defined (Manual)
   policy: 5.3.2-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.3.2
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Follow the documentation and create NetworkPolicy objects as you need them.
@@ -4636,21 +4636,21 @@ results:
     type: manual
   result: warn
   rule: Network Policies and CNI
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990477536
-    seconds: 57
+    nanos: 45588626
+    seconds: 56
 - category: CIS Benchmarks
   message: Prefer using Secrets as files over Secrets as environment variables (Manual)
   policy: 5.4.1-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.4.1
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       If possible, rewrite application code to read Secrets from mounted secret files, rather than
@@ -4661,21 +4661,21 @@ results:
     type: manual
   result: warn
   rule: Secrets Management
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990478379
-    seconds: 57
+    nanos: 45589917
+    seconds: 56
 - category: CIS Benchmarks
   message: Consider external secret storage (Manual)
   policy: 5.4.2-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.4.2
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Refer to the Secrets management options offered by your cloud provider or a third-party
@@ -4686,22 +4686,22 @@ results:
     type: manual
   result: warn
   rule: Secrets Management
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990480033
-    seconds: 57
+    nanos: 45591169
+    seconds: 56
 - category: CIS Benchmarks
   message: Configure Image Provenance using ImagePolicyWebhook admission controller
     (Manual)
   policy: 5.5.1-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.5.1
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Follow the Kubernetes documentation and setup image provenance.
@@ -4710,21 +4710,21 @@ results:
     type: manual
   result: warn
   rule: Extensible Admission Control
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990480868
-    seconds: 57
+    nanos: 45594885
+    seconds: 56
 - category: CIS Benchmarks
   message: Create administrative boundaries between resources using namespaces (Manual)
   policy: 5.7.1-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.7.1
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Follow the documentation and create namespaces for objects in your deployment as you need
@@ -4735,22 +4735,22 @@ results:
     type: manual
   result: warn
   rule: General Policies
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990481686
-    seconds: 57
+    nanos: 45740641
+    seconds: 56
 - category: CIS Benchmarks
   message: Ensure that the seccomp profile is set to docker/default in your Pod definitions
     (Manual)
   policy: 5.7.2-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.7.2
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Use `securityContext` to enable the docker/default seccomp profile in your pod definitions.
@@ -4767,21 +4767,21 @@ results:
     type: manual
   result: warn
   rule: General Policies
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990482520
-    seconds: 57
+    nanos: 45745764
+    seconds: 56
 - category: CIS Benchmarks
   message: Apply SecurityContext to your Pods and Containers (Manual)
   policy: 5.7.3-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.7.3
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Follow the Kubernetes documentation and apply SecurityContexts to your Pods. For a
@@ -4794,21 +4794,21 @@ results:
     type: manual
   result: warn
   rule: General Policies
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990483379
-    seconds: 57
+    nanos: 45746877
+    seconds: 56
 - category: CIS Benchmarks
   message: The default namespace should not be used (Manual)
   policy: 5.7.4-Kubernetes Policies
   properties:
-    AuditConfig: ""
-    AuditEnv: ""
-    IsMultiple: "false"
     actual_value: ""
     audit: ""
+    auditConfig: ""
+    auditEnv: ""
     expected_result: ""
     index: 5.7.4
+    isMultiple: "false"
     reason: Test marked as a manual test
     remediation: |
       Ensure that namespaces are created to allow for appropriate segregation of Kubernetes
@@ -4819,10 +4819,10 @@ results:
     type: manual
   result: warn
   rule: General Policies
-  source: Kube Bench Adapter
+  source: kube-bench-adapter
   timestamp:
-    nanos: 990484152
-    seconds: 57
+    nanos: 45747783
+    seconds: 56
 summary:
   error: 0
   fail: 11
