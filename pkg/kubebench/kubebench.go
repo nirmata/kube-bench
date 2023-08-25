@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"strings"
@@ -81,7 +82,6 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 	}
 
 	return controls, nil
-
 }
 
 func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *params.KubeBenchArgs) (string, error) {
@@ -162,7 +162,15 @@ func getPodLogs(ctx context.Context, clientset *kubernetes.Clientset, jobName st
 	if err != nil {
 		return "", err
 	}
-	return buf.String(), nil
+
+	lines := strings.Split(buf.String(), "\n")
+	for _, line := range lines {
+		if line[0] == '{' {
+			return line, nil
+		}
+	}
+
+	return "", errors.New("Couldn't find the JSON")
 }
 
 func convert(jsonString string) (*kubebench.OverallControls, error) {
