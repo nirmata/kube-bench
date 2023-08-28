@@ -34,7 +34,7 @@ kubectl get clusterpolicyreports
 #### Steps to run kube-bench adapter from outside a cluster 
 ##### Building
 ```sh
-make build
+make build-local
 ```
 ##### Installing
 ```sh
@@ -52,7 +52,7 @@ kubectl get clusterpolicyreports
 | -kube-bench-benchmark | `string`|   cis-1.7                    |    See [CIS Kubernetes Benchmark support](https://github.com/aquasecurity/kube-bench/blob/main/docs/platforms.md#cis-kubernetes-benchmark-support)            | specify the benchmark for kube-bench job         |
 | -kube-bench-targets   | `string`(accepts multiple values)| master,node,etcd,policies| 	master, controlplane, node, etcd, policies               | targets for benchmark of kube-bench job          |   
 | -kube-bench-version   | `string`|    1.21                    |   Kubernetes Version like 1.20,1.21,etc             | specify the Kubernetes version for kube-bench job|
-| -kubebenchImg         | `string`| aquasec/kube-bench:latest|aquasec/kube-bench:(kube-bench-version)                | kube-bench image used as part of this test       |
+| -kube-bench-image         | `string`| aquasec/kube-bench:latest|aquasec/kube-bench:(kube-bench-version)                | kube-bench image used as part of this test       |
 | -kubeconfig           | `string`| $HOME/.kube/config       |  path to your KUBECONFIG              | absolute path to the kubeconfig file             | 
 | -name                 | `string`| kube-bench               |  Any name of string type              | name of policy report                            |
 
