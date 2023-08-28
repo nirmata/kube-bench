@@ -39,7 +39,7 @@ make build-local
 ##### Installing
 ```sh
 # Create policy report using
-./policyreport -name="kube-bench" -kube-bench-targets="master,node" -kube-bench-benchmark=cis-1.7 -category="CIS Benchmarks"
+./policyreport -name="kube-bench" -kube-bench-targets="master,node" -kube-bench-benchmark=cis-1.7 -category="CIS Kubernetes Benchmarks"
 
 # Check policyreports created through the custom resource
 kubectl get clusterpolicyreports
@@ -47,7 +47,7 @@ kubectl get clusterpolicyreports
 ###### Command Line Arguments
 |      Argument         |  Type   |    Default value         | Allowed value  | Usage                                            |
 |:--------------------- |:-------:|-------------------------:|:--------------:|:------------------------------------------------:|
-| -category             | `string`| CIS Benchmarks           |   Any string name valid for category             | category of the policy report 
+| -category             | `string`| CIS Kubernetes Benchmarks           |   Any string name valid for category             | category of the policy report 
 | -namespace            | `string`| default                   |  any string name for required namespace |  specifies namespace where kube-bench job will run
 | -kube-bench-benchmark | `string`|   cis-1.7                    |    See [CIS Kubernetes Benchmark support](https://github.com/aquasecurity/kube-bench/blob/main/docs/platforms.md#cis-kubernetes-benchmark-support)            | specify the benchmark for kube-bench job         |
 | -kube-bench-targets   | `string`(accepts multiple values)| master,node,etcd,policies| 	master, controlplane, node, etcd, policies               | targets for benchmark of kube-bench job          |   
