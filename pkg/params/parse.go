@@ -27,7 +27,7 @@ var Params KubeBenchArgs
 
 func ParseArguments() {
 	flag.StringVar(&Params.Name, "name", "kube-bench", "name of policy report")
-	flag.StringVar(&Params.Category, "category", "CIS Benchmarks", "category of the policy report")
+	flag.StringVar(&Params.Category, "category", "CIS Kubernetes Benchmarks", "category of the policy report")
 	flag.StringVar(&Params.Namespace, "namespace", "default", "namespace of kube-bench job")
 	flag.StringVar(&Params.KubebenchTargets, "kube-bench-targets", "master,node,etcd,policies", "targets for benchmark of kube-bench job")
 	flag.StringVar(&Params.KubebenchVersion, "kube-bench-version", "", "specify the Kubernetes version for kube-bench job")
