@@ -101,6 +101,9 @@ func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *par
 	if params.KubebenchBenchmark != "" {
 		job.Spec.Template.Spec.Containers[0].Args = append(job.Spec.Template.Spec.Containers[0].Args, "--benchmark="+params.KubebenchBenchmark)
 	}
+	if params.KubebenchTargets != "" {
+		job.Spec.Template.Spec.Containers[0].Args = append(job.Spec.Template.Spec.Containers[0].Args, "--targets="+params.KubebenchTargets)
+	}
 
 	_, err = clientset.BatchV1().Jobs(params.Namespace).Create(ctx, job, metav1.CreateOptions{})
 
