@@ -65,6 +65,10 @@ func newResult(category string, control *kubebench.Controls, group *kubebench.Gr
 }
 
 func convertState(s kubebench.State) clusterpolicyreport.PolicyResult {
+	if s == kubebench.INFO {
+		s = kubebench.PASS
+	}
+
 	str := strings.ToLower(string(s))
 
 	return clusterpolicyreport.PolicyResult(str)
