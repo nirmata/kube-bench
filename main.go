@@ -22,7 +22,7 @@ func main() {
 	}
 
 	// create policy report
-	r, err := report.New(cis, params.Params.Name, params.Params.KubebenchBenchmark, params.Params.Category)
+	r, err := report.New(cis, params.Params.Name, params.Params.KubebenchBenchmark)
 	if err != nil {
 		fmt.Printf("failed to create policy reports: %v \n", err)
 		os.Exit(-1)
