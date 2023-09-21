@@ -13,7 +13,28 @@ import (
 
 const PolicyReportSource string = "kube-bench-adapter"
 
-func New(cisResults *kubebench.OverallControls, name, benchmark, category string) (*clusterpolicyreport.ClusterPolicyReport, error) {
+func getCategory(benchmark string) (category string) {
+	benchmark = strings.Split(benchmark, "-")[0]
+
+	switch benchmark {
+	case "eks":
+		category = "CIS Amazon Elastic Kubernetes Service (EKS) Benchmark"
+	case "aks":
+		category = "CIS Azure Kubernetes Service (AKS) Benchmark"
+	case "gke":
+		category = "CIS Google Kubernetes Engine (GKE) Benchmark"
+	case "rh":
+		category = "CIS RedHat OpenShift Container Platform v4 Benchmark"
+	default:
+		category = "CIS Kubernetes Benchmarks"
+	}
+
+	return
+}
+
+func New(cisResults *kubebench.OverallControls, name, benchmark string) (*clusterpolicyreport.ClusterPolicyReport, error) {
+	category := getCategory(benchmark)
+
 	report := &clusterpolicyreport.ClusterPolicyReport{
 		ObjectMeta: metav1.ObjectMeta{
 			Name:        name,
