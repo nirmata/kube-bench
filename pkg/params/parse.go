@@ -20,6 +20,9 @@ type KubeBenchArgs struct {
 	KubebenchBenchmark string
 
 	Timeout time.Duration
+
+	NodeSelectorKey   string
+	NodeSelectorValue string
 }
 
 var Params KubeBenchArgs
@@ -33,6 +36,8 @@ func ParseArguments() {
 
 	flag.StringVar(&Params.KubebenchImg, "kube-bench-image", "aquasec/kube-bench:v0.6.17", "kube-bench image used as part of this test")
 	flag.DurationVar(&Params.Timeout, "timeout", 10*time.Minute, "Test Timeout")
+	flag.StringVar(&Params.NodeSelectorKey, "nodeSelectorKey", "", "Job nameSelector Key")
+	flag.StringVar(&Params.NodeSelectorValue, "nodeSelectorValue", "", "Job nameSelector value")
 
 	if home := homedir.HomeDir(); home != "" {
 		flag.StringVar(&Params.Kubeconfig, "kubeconfig", filepath.Join(home, ".kube", "config"), "(optional) absolute path to the kubeconfig file")

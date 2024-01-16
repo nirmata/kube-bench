@@ -58,11 +58,13 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 
 	p, err := findPodForJob(context.Background(), clientset, params, jobName, params.Timeout)
 	if err != nil {
+		fmt.Printf("failed to find pod for job %s\n", err)
 		return nil, err
 	}
 
 	output, err := getPodLogs(context.Background(), clientset, jobName, p)
 	if err != nil {
+		fmt.Printf("error getting pod logs for job, %s. Error %v\n", jobName, err)
 		return nil, err
 	}
 
@@ -101,8 +103,8 @@ func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *par
 	if params.KubebenchBenchmark != "" {
 		job.Spec.Template.Spec.Containers[0].Args = append(job.Spec.Template.Spec.Containers[0].Args, "--benchmark="+params.KubebenchBenchmark)
 	}
-	if params.KubebenchTargets != "" {
-		job.Spec.Template.Spec.Containers[0].Args = append(job.Spec.Template.Spec.Containers[0].Args, "--targets="+params.KubebenchTargets)
+	if params.NodeSelectorKey != "" {
+		job.Spec.Template.Spec.NodeSelector = map[string]string{params.NodeSelectorKey: params.NodeSelectorValue}
 	}
 
 	_, err = clientset.BatchV1().Jobs(params.Namespace).Create(ctx, job, metav1.CreateOptions{})
@@ -125,17 +127,20 @@ func findPodForJob(ctx context.Context, clientset *kubernetes.Clientset, params 
 				LabelSelector: selector,
 			})
 			if err != nil {
+				fmt.Printf("job listing error %v\n", err)
 				return nil, err
 			}
 			fmt.Printf("Found (%d) pods\n", len(pods.Items))
 			for _, cp := range pods.Items {
 				if _, found := failedPods[cp.Name]; found {
+					fmt.Printf("skip failed pod %s\n", cp.Name)
 					continue
 				}
 
 				if strings.HasPrefix(cp.Name, jobName) {
 					fmt.Printf("pod (%s) - %#v\n", cp.Name, cp.Status.Phase)
 					if cp.Status.Phase == apiv1.PodSucceeded {
+						fmt.Printf("pod %s succeeded\n", cp.Name)
 						return &cp, nil
 					}
 
