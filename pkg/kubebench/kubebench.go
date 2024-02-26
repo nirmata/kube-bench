@@ -87,7 +87,7 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 }
 
 func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *params.KubeBenchArgs) (string, error) {
-	jobYAML, err := embedYAMLs(params.KubebenchBenchmark)
+	jobYAML, err := embedYAMLs(params.KubebenchBenchmark, params.ClusterType, params.CustomJobFile)
 	if err != nil {
 		return "", err
 	}
