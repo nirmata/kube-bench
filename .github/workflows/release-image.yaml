@@ -32,4 +32,8 @@ jobs:
       - name: Install KO
         uses: ko-build/setup-ko@v0.6
 
-      - run: make ko-build
+      - env:
+          auth_token: ${{ secrets.GITHUB_TOKEN }}
+          user: ${{ secrets.author }}
+        run: |
+          echo "${auth_token}" | ko login ghcr.io --username "${user}" --password-stdin make ko-build
