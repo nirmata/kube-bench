@@ -26,7 +26,7 @@ ko-build: fmt vet
 .PHONY: ko-test-build
 ko-test-build:
 	@KO_DOCKER_REPO=$(KO_LOCAL_REGISTRY) \
-	ko build . --bare --sbom=none --tags=test --platform=$(LOCAL_PLATFORM)
+	ko build . --bare --tags=test --platform=$(LOCAL_PLATFORM)
 
 docker: build
 	docker build . -t ghcr.io/nirmata/kube-bench-adapter:v0.2.5
