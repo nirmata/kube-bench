@@ -6,10 +6,6 @@ on:
       - 'v*'
 
 env:
-  REGISTRY: ghcr.io
-  REPOSITORY: kube-bench
-  IMAGE_NAME: nirmata/kube-bench-adapter
-  KO_DOCKER_REPO: ghcr.io/nirmata/kube-bench-adapter
   KO_REGISTRY: ghcr.io/nirmata/kube-bench-adapter
   
 jobs:
