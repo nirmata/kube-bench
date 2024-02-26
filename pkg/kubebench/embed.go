@@ -2,6 +2,7 @@ package kubebench
 
 import (
 	"embed"
+	"os"
 )
 
 //go:embed jobs/*.yaml
@@ -14,10 +15,13 @@ func embedYAMLs(benchmark, clusterType, customJobFile string) ([]byte, error) {
 	jobFile := "jobs/job.yaml"
 	if customJobFile != "" {
 		jobFile = customJobFile
-	} else if clusterType != "" {
-		jobFile = "jobs/job-" + clusterType + ".yaml"
+		data, err = os.ReadFile(customJobFile)
+	} else {
+		if clusterType != "" {
+			jobFile = "jobs/job-" + clusterType + ".yaml"
+		}
+		data, err = yamlDir.ReadFile(jobFile)
 	}
-	data, err = yamlDir.ReadFile(jobFile)
 	if err != nil {
 		return nil, err
 	}
