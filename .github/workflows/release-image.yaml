@@ -31,5 +31,4 @@ jobs:
       - name: Install KO
         uses: ko-build/setup-ko@v0.6
 
-      - name: KO build
-        uses: make ko-build
+      - run: make ko-build
