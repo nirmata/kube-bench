@@ -18,6 +18,8 @@ type KubeBenchArgs struct {
 	KubebenchTargets   string
 	KubebenchVersion   string
 	KubebenchBenchmark string
+	CustomJobFile      string
+	ClusterType        string
 
 	Timeout time.Duration
 
@@ -33,6 +35,8 @@ func ParseArguments() {
 	flag.StringVar(&Params.KubebenchTargets, "kube-bench-targets", "master,node,etcd,policies", "targets for benchmark of kube-bench job")
 	flag.StringVar(&Params.KubebenchVersion, "kube-bench-version", "", "specify the Kubernetes version for kube-bench job")
 	flag.StringVar(&Params.KubebenchBenchmark, "kube-bench-benchmark", "cis-1.7", "specify the benchmark for kube-bench job")
+	flag.StringVar(&Params.CustomJobFile, "custom-job-file", "", "specify a custom kubebench job file if any")
+	flag.StringVar(&Params.ClusterType, "cluster-type", "", "override default cluster type used in kube-bench, E.g aks, eks, eks-asff, gke, etc.")
 
 	flag.StringVar(&Params.KubebenchImg, "kube-bench-image", "aquasec/kube-bench:v0.6.17", "kube-bench image used as part of this test")
 	flag.DurationVar(&Params.Timeout, "timeout", 10*time.Minute, "Test Timeout")
