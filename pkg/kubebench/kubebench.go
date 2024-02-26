@@ -87,7 +87,7 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 }
 
 func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *params.KubeBenchArgs) (string, error) {
-	jobYAML, err := embedYAMLs(params.KubebenchBenchmark)
+	jobYAML, err := embedYAMLs(params.KubebenchBenchmark, params.ClusterType, params.CustomJobFile)
 	if err != nil {
 		return "", err
 	}
@@ -102,6 +102,9 @@ func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *par
 	job.Spec.Template.Spec.Containers[0].Args = []string{"--json"}
 	if params.KubebenchBenchmark != "" {
 		job.Spec.Template.Spec.Containers[0].Args = append(job.Spec.Template.Spec.Containers[0].Args, "--benchmark="+params.KubebenchBenchmark)
+	}
+	if params.KubebenchTargets != "" {
+		job.Spec.Template.Spec.Containers[0].Args = append(job.Spec.Template.Spec.Containers[0].Args, "--targets="+params.KubebenchTargets)
 	}
 	if params.NodeSelectorKey != "" {
 		job.Spec.Template.Spec.NodeSelector = map[string]string{params.NodeSelectorKey: params.NodeSelectorValue}
