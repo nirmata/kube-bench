@@ -36,4 +36,5 @@ jobs:
           auth_token: ${{ secrets.GITHUB_TOKEN }}
           user: ${{ secrets.author }}
         run: |
-          echo "${auth_token}" | ko login ghcr.io --username "${user}" --password-stdin make ko-build
+          echo "${auth_token}" | ko login ghcr.io --username "${user}" --password-stdin 
+          make ko-build
