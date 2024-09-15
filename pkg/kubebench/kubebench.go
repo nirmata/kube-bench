@@ -50,6 +50,20 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 		return nil, err
 	}
 
+	if params.Registry != "aquasec" {
+		secretName, err := deploySecret(context.Background(), clientset, params)
+		if err != nil {
+			return nil, err
+		}
+
+		_, err = clientset.CoreV1().Secrets(params.Namespace).Get(context.Background(), secretName, metav1.GetOptions{})
+
+		if err != nil {
+			fmt.Printf("failed to find secret for job %s\n", err)
+			return nil, err
+		}
+	}
+
 	var jobName string
 	jobName, err = deployJob(context.Background(), clientset, params)
 	if err != nil {
@@ -86,6 +100,29 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 	return controls, nil
 }
 
+func deploySecret(ctx context.Context, clientset *kubernetes.Clientset, params *params.KubeBenchArgs) (string, error) {
+	// Create a new secret object
+	secret := &apiv1.Secret{
+		Type: apiv1.SecretTypeOpaque,
+		ObjectMeta: metav1.ObjectMeta{
+			Name:      "docker-image-pull-secret",
+			Namespace: params.Namespace,
+		},
+		Data: map[string][]byte{
+			".dockerconfigjson": []byte(`{"auths":{"` + params.Registry + `":{"username":"` + params.RegistryUsername + `","password":"` + params.RegistryPassword + `"}}}`),
+		},
+	}
+
+	// Create the secret in the Kubernetes cluster
+	_, err := clientset.CoreV1().Secrets(params.Namespace).Create(ctx, secret, metav1.CreateOptions{})
+	if err != nil {
+		return "", err
+	}
+
+	// Return the name of the created secret
+	return secret.Name, nil
+}
+
 func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *params.KubeBenchArgs) (string, error) {
 	jobYAML, err := embedYAMLs(params.KubebenchBenchmark, params.ClusterType, params.CustomJobFile)
 	if err != nil {
@@ -97,8 +134,9 @@ func deployJob(ctx context.Context, clientset *kubernetes.Clientset, params *par
 	if err := decoder.Decode(job); err != nil {
 		return "", err
 	}
+	kubebenchImg := params.Registry + "/kube-bench:" + params.KubebenchTag
 	jobName := job.GetName()
-	job.Spec.Template.Spec.Containers[0].Image = params.KubebenchImg
+	job.Spec.Template.Spec.Containers[0].Image = kubebenchImg
 	job.Spec.Template.Spec.Containers[0].Args = []string{"--json"}
 	if params.KubebenchBenchmark != "" {
 		job.Spec.Template.Spec.Containers[0].Args = append(job.Spec.Template.Spec.Containers[0].Args, "--benchmark="+params.KubebenchBenchmark)

@@ -14,12 +14,15 @@ type KubeBenchArgs struct {
 	Name string
 
 	Kubeconfig         string
-	KubebenchImg       string
+	KubebenchTag       string
 	KubebenchTargets   string
 	KubebenchVersion   string
 	KubebenchBenchmark string
 	CustomJobFile      string
 	ClusterType        string
+	Registry           string
+	RegistryUsername   string
+	RegistryPassword   string
 
 	Timeout time.Duration
 
@@ -38,7 +41,10 @@ func ParseArguments() {
 	flag.StringVar(&Params.CustomJobFile, "custom-job-file", "", "specify a custom kubebench job file if any")
 	flag.StringVar(&Params.ClusterType, "cluster-type-override", "", "use non default cluster type in kube-bench, E.g aks, eks, eks-asff, gke, etc.")
 
-	flag.StringVar(&Params.KubebenchImg, "kube-bench-image", "aquasec/kube-bench:v0.6.17", "kube-bench image used as part of this test")
+	flag.StringVar(&Params.KubebenchTag, "tag", "v0.6.17", "kube-bench image tag used as part of this test")
+	flag.StringVar(&Params.Registry, "registry-name", "aquasec", "registry where kube-bench image resides")
+	flag.StringVar(&Params.RegistryUsername, "registry-username", "", "registry user name")
+	flag.StringVar(&Params.RegistryPassword, "registry-password", "", "registry password")
 	flag.DurationVar(&Params.Timeout, "timeout", 10*time.Minute, "Test Timeout")
 	flag.StringVar(&Params.NodeSelectorKey, "nodeSelectorKey", "", "Job nameSelector Key")
 	flag.StringVar(&Params.NodeSelectorValue, "nodeSelectorValue", "", "Job nameSelector value")
