@@ -50,7 +50,7 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 		return nil, err
 	}
 
-	if params.Registry != "aquasec" {
+	if params.Registry != "aquasec" && params.RegistryUsername != "" && params.RegistryPassword != "" {
 		secretName, err := deploySecret(context.Background(), clientset, params)
 		if err != nil {
 			return nil, err
@@ -62,6 +62,16 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 			fmt.Printf("failed to find secret for job %s\n", err)
 			return nil, err
 		}
+	} else {
+		requiredParam := make([]string, 2)
+		if params.Registry != "aquasec" && params.RegistryUsername == "" {
+			requiredParam = append(requiredParam, "registry-username")
+		} 
+		
+		if params.Registry != "aquasec" && params.RegistryPassword == "" {
+			requiredParam = append(requiredParam, "registry-password")
+		}
+		fmt.Printf("failed to create imagePullSecret, pls specify required params %s\n", requiredParam)
 	}
 
 	var jobName string
