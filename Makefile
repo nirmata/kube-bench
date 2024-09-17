@@ -2,7 +2,7 @@ KO_LOCAL_REGISTRY := ko.local/kube-bench-adapter
 KO_REGISTRY ?= github.com/nirmata/kube-bench-adapter
 PLATFORMS ?= linux/arm64,linux/amd64,linux/s390x,linux/ppc64le
 LOCAL_PLATFORM ?= linux/arm64
-IMAGE_TAG ?= $(shell git describe)
+IMAGE_TAG ?= $(shell git describe --always --tags)
 
 all: build-local
 
