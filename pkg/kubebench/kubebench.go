@@ -66,8 +66,8 @@ func RunJob(params *params.KubeBenchArgs) (*kubebench.OverallControls, error) {
 		requiredParam := make([]string, 2)
 		if params.Registry != "aquasec" && params.RegistryUsername == "" {
 			requiredParam = append(requiredParam, "registry-username")
-		} 
-		
+		}
+
 		if params.Registry != "aquasec" && params.RegistryPassword == "" {
 			requiredParam = append(requiredParam, "registry-password")
 		}
