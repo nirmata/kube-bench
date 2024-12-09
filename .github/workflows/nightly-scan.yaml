@@ -36,3 +36,15 @@ jobs:
           pcc_user: ${{ secrets.PCC_USER }}
           pcc_pass: ${{ secrets.PCC_PASS }}
           image_name: ${{env.KO_REGISTRY}}
+
+      - name: Notify failure status
+        if: always() && (job.status == 'failure')
+        uses: rtCamp/action-slack-notify@c33737706dea87cd7784c687dadc9adf1be59990 #v2.3.2
+        env:
+          SLACK_CHANNEL: cve-nightly-scan-alerts
+          SLACK_COLOR: ${{ job.status }}
+          SLACK_ICON: https://cdn-icons-png.flaticon.com/512/25/25231.png
+          SLACK_MESSAGE: Repository - ${{github.repository}} - main Environment - nightly-scan
+          SLACK_TITLE: CVE discovered
+          SLACK_USERNAME: Github Actions
+          SLACK_WEBHOOK: ${{ secrets.NIGHTLY_SCAN_WEBHOOK }}     
