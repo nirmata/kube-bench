@@ -1,0 +1,38 @@
+name: Nightly Scan
+
+on:
+  workflow_dispatch:
+
+env:
+  KO_REGISTRY: ghcr.io/nirmata/nightly-kube-bench-adapter
+  
+jobs:
+  publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+
+    steps:
+      - uses: actions/setup-go@v4
+        with:
+          go-version: 1.21.5
+
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Install KO
+        uses: ko-build/setup-ko@v0.6
+
+      - run: make ko-build IMAGE_TAG=latest
+
+      - name: image scanning
+        uses: nirmata/reusable-workflows/.github/actions/image-scanning@main
+        with:
+          pcc_url: ${{ secrets.PCC_URL }}
+          pcc_user: ${{ secrets.PCC_USER }}
+          pcc_pass: ${{ secrets.PCC_PASS }}
+          image_name: ${{env.KO_REGISTRY}}
