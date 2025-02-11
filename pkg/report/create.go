@@ -25,6 +25,8 @@ func getCategory(benchmark string) (category string) {
 		category = "CIS Google Kubernetes Engine (GKE) Benchmark"
 	case "rh":
 		category = "CIS RedHat OpenShift Container Platform v4 Benchmark"
+	case "oke":
+		category = "CIS Oracle Kubernetes Engine (OKE) Benchmark"		
 	default:
 		category = "CIS Kubernetes Benchmarks"
 	}
